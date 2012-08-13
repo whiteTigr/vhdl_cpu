@@ -1,0 +1,6 @@
+V3 3
+FL D:/XProjects/vhdl_cpu/cpu.vhd 2012/08/13.16:16:27 P.15xf
+EN work/cpu 1344860201 FL D:/XProjects/vhdl_cpu/cpu.vhd PB ieee/std_logic_1164 1335251622 \
+      PB ieee/std_logic_arith 1335251623 PB ieee/STD_LOGIC_UNSIGNED 1335251625
+AR work/cpu/Behavioral 1344860202 \
+      FL D:/XProjects/vhdl_cpu/cpu.vhd EN work/cpu 1344860201
