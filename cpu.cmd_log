@@ -46,3 +46,6 @@ xst -intstyle ise -ifn "D:/XProjects/vhdl_cpu/cpu.xst" -ofn "D:/XProjects/vhdl_c
 xst -intstyle ise -ifn "D:/XProjects/vhdl_cpu/cpu.xst" -ofn "D:/XProjects/vhdl_cpu/cpu.syr" 
 xst -intstyle ise -ifn "D:/XProjects/vhdl_cpu/cpu.xst" -ofn "D:/XProjects/vhdl_cpu/cpu.syr" 
 xst -intstyle ise -ifn "D:/XProjects/vhdl_cpu/cpu.xst" -ofn "D:/XProjects/vhdl_cpu/cpu.syr" 
+xst -intstyle ise -ifn "D:/XProjects/vhdl_cpu/cpu.xst" -ofn "D:/XProjects/vhdl_cpu/cpu.syr" 
+xst -intstyle ise -ifn "D:/XProjects/vhdl_cpu/cpu.xst" -ofn "D:/XProjects/vhdl_cpu/cpu.syr" 
+xst -intstyle ise -ifn "D:/XProjects/vhdl_cpu/cpu.xst" -ofn "D:/XProjects/vhdl_cpu/cpu.syr" 

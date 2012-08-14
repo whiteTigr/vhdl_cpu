@@ -3,14 +3,14 @@ Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 2.00 secs
-Total CPU time to Xst completion: 2.00 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.20 secs
  
 --> Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 2.00 secs
-Total CPU time to Xst completion: 2.01 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.20 secs
  
 --> Reading design: cpu.prj
 
@@ -134,11 +134,11 @@ Analyzing generic Entity <cpu> in library <work> (Architecture <behavioral>).
 	DataWidth = 32
 	StackSize = 16
 	StackWidth = 4
-WARNING:Xst:790 - "D:/XProjects/vhdl_cpu/cpu.vhd" line 165: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "D:/XProjects/vhdl_cpu/cpu.vhd" line 194: Index value(s) does not match array range, simulation mismatch.
 INFO:Xst:1607 - Contents of array <CodeMemory> may be accessed with an index that does not cover the full array size.
-WARNING:Xst:790 - "D:/XProjects/vhdl_cpu/cpu.vhd" line 167: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "D:/XProjects/vhdl_cpu/cpu.vhd" line 196: Index value(s) does not match array range, simulation mismatch.
 INFO:Xst:1607 - Contents of array <CodeMemory> may be accessed with an index that does not cover the full array size.
-WARNING:Xst:790 - "D:/XProjects/vhdl_cpu/cpu.vhd" line 168: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "D:/XProjects/vhdl_cpu/cpu.vhd" line 197: Index value(s) does not match array range, simulation mismatch.
 INFO:Xst:1607 - Contents of array <CodeMemory> may be accessed with an index that does not cover the full array size.
 INFO:Xst:2679 - Register <RSAddrB> in unit <cpu> has a constant value of 0000 during circuit operation. The register is replaced by logic.
 INFO:Xst:2679 - Register <CodeAddrA> in unit <cpu> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
@@ -175,21 +175,21 @@ WARNING:Xst:646 - Signal <CmdIsLit> is assigned but never used. This unconnected
     Found 9-bit register for signal <CodeDoutB>.
     Found 4096-bit register for signal <DataMemory>.
     Found 4-bit register for signal <DSAddrA>.
-    Found 4-bit addsub for signal <DSAddrA$share0000> created at line 221.
-    Found 4-bit subtractor for signal <DSAddrB$sub0000> created at line 190.
+    Found 4-bit addsub for signal <DSAddrA$share0000> created at line 250.
+    Found 4-bit subtractor for signal <DSAddrB$sub0000> created at line 219.
     Found 32-bit register for signal <DSDinA>.
-    Found 32-bit adder for signal <DSDinA$addsub0000> created at line 248.
+    Found 32-bit adder for signal <DSDinA$addsub0000> created at line 290.
+    Found 9-bit comparator greatequal for signal <DSDinA$cmp_ge0000>.
     Found 32-bit register for signal <DSDoutA>.
     Found 32-bit register for signal <DSDoutB>.
     Found 1-bit register for signal <DSWeA>.
-    Found 9-bit comparator greatequal for signal <DSWeA$cmp_ge0000>.
     Found 1-bit register for signal <fetching>.
     Found 32-bit register for signal <IP>.
     Found 1-bit register for signal <PrevCmdIsLIT>.
     Found 4-bit register for signal <RSAddrA>.
     Found 4-bit addsub for signal <RSAddrA$addsub0000>.
     Found 32-bit register for signal <RSDinA>.
-    Found 32-bit adder for signal <RSDinA$add0000> created at line 240.
+    Found 32-bit adder for signal <RSDinA$add0000> created at line 312.
     Found 32-bit register for signal <RSDoutA>.
     Found 1-bit register for signal <RSWeA>.
 INFO:Xst:738 - HDL ADVISOR - 4096 flip-flops were inferred for signal <DataMemory>. You may be trying to describe a RAM in a way that is incompatible with block and distributed RAM resources available on Xilinx devices, or with a specific template that is not supported. Please review the Xilinx resources documentation and the XST user manual for coding guidelines. Taking advantage of RAM resources will lead to improved device usage and reduced synthesis time.
@@ -405,10 +405,7 @@ Optimizing unit <cpu> ...
 Mapping all equations...
 Building and optimizing final netlist ...
 Found area constraint ratio of 100 (+ 5) on block cpu, actual ratio is 4.
-FlipFlop DSAddrA_0 has been replicated 2 time(s)
-FlipFlop DSAddrA_1 has been replicated 2 time(s)
-FlipFlop DSAddrA_2 has been replicated 1 time(s)
-FlipFlop DSAddrA_3 has been replicated 1 time(s)
+FlipFlop DSAddrA_0 has been replicated 1 time(s)
 
 Final Macro Processing ...
 
@@ -416,8 +413,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 141
- Flip-Flops                                            : 141
+# Registers                                            : 136
+ Flip-Flops                                            : 136
 
 =========================================================================
 
@@ -446,26 +443,26 @@ Design Statistics
 # IOs                              : 99
 
 Cell Usage :
-# BELS                             : 347
+# BELS                             : 375
 #      GND                         : 2
 #      INV                         : 4
 #      LUT1                        : 7
-#      LUT2                        : 38
+#      LUT2                        : 56
 #      LUT2_D                      : 1
-#      LUT2_L                      : 1
-#      LUT3                        : 66
-#      LUT3_D                      : 1
-#      LUT4                        : 91
-#      LUT4_D                      : 2
-#      LUT4_L                      : 33
+#      LUT3                        : 78
+#      LUT3_D                      : 2
+#      LUT3_L                      : 2
+#      LUT4                        : 85
+#      LUT4_D                      : 1
+#      LUT4_L                      : 26
 #      MUXCY                       : 47
-#      MUXF5                       : 12
+#      MUXF5                       : 22
 #      VCC                         : 1
 #      XORCY                       : 41
-# FlipFlops/Latches                : 141
+# FlipFlops/Latches                : 136
 #      FD                          : 73
 #      FDE                         : 43
-#      FDRE                        : 24
+#      FDRE                        : 19
 #      FDS                         : 1
 # RAMS                             : 42
 #      RAM16X1D                    : 32
@@ -483,10 +480,10 @@ Device utilization summary:
 
 Selected Device : 3s400tq144-4 
 
- Number of Slices:                      173  out of   3584     4%  
- Number of Slice Flip Flops:            141  out of   7168     1%  
- Number of 4 input LUTs:                317  out of   7168     4%  
-    Number used as logic:               244
+ Number of Slices:                      174  out of   3584     4%  
+ Number of Slice Flip Flops:            136  out of   7168     1%  
+ Number of 4 input LUTs:                335  out of   7168     4%  
+    Number used as logic:               262
     Number used as RAMs:                 73
  Number of IOs:                          99
  Number of bonded IOBs:                  66  out of     97    68%  
@@ -514,7 +511,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clk                                | BUFGP                  | 183   |
+clk                                | BUFGP                  | 178   |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -526,7 +523,7 @@ Timing Summary:
 Speed Grade: -4
 
    Minimum period: 7.436ns (Maximum Frequency: 134.481MHz)
-   Minimum input arrival time before clock: 6.002ns
+   Minimum input arrival time before clock: 5.873ns
    Maximum output required time after clock: 7.285ns
    Maximum combinational path delay: No path found
 
@@ -537,7 +534,7 @@ All values displayed in nanoseconds (ns)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
   Clock period: 7.436ns (frequency: 134.481MHz)
-  Total number of paths / destination ports: 3751 / 588
+  Total number of paths / destination ports: 3700 / 578
 -------------------------------------------------------------------------
 Delay:               7.436ns (Levels of Logic = 34)
   Source:            DSDoutA_0 (FF)
@@ -591,9 +588,9 @@ Delay:               7.436ns (Levels of Logic = 34)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 68 / 68
+  Total number of paths / destination ports: 63 / 63
 -------------------------------------------------------------------------
-Offset:              6.002ns (Levels of Logic = 2)
+Offset:              5.873ns (Levels of Logic = 2)
   Source:            reset (PAD)
   Destination:       DSDinA_0 (FF)
   Destination Clock: clk rising
@@ -602,12 +599,12 @@ Offset:              6.002ns (Levels of Logic = 2)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O            28   0.821   2.169  reset_IBUF (reset_IBUF)
+     IBUF:I->O            23   0.821   2.040  reset_IBUF (reset_IBUF)
      LUT2:I0->O           33   0.551   1.859  RSWeA_or0000_inv1 (RSWeA_or0000_inv)
      FDE:CE                    0.602          DSDinA_0
     ----------------------------------------
-    Total                      6.002ns (1.974ns logic, 4.028ns route)
-                                       (32.9% logic, 67.1% route)
+    Total                      5.873ns (1.974ns logic, 3.899ns route)
+                                       (33.6% logic, 66.4% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
@@ -631,8 +628,8 @@ Offset:              7.285ns (Levels of Logic = 1)
 =========================================================================
 
 
-Total REAL time to Xst completion: 20.00 secs
-Total CPU time to Xst completion: 19.48 secs
+Total REAL time to Xst completion: 14.00 secs
+Total CPU time to Xst completion: 14.67 secs
  
 --> 
 
