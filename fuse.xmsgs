@@ -5,5 +5,14 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
+<msg type="warning" file="HDLCompiler" num="960" delta="unknown" >"D:/XProjects/vhdl_cpu/cpu.vhd" Line 289: Expression has incompatible type
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="960" delta="unknown" >"D:/XProjects/vhdl_cpu/cpu.vhd" Line 290: Expression has incompatible type
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="960" delta="unknown" >"D:/XProjects/vhdl_cpu/cpu.vhd" Line 312: Expression has incompatible type
+</msg>
+
 </messages>
 

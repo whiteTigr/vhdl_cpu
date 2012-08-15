@@ -60,37 +60,38 @@ constant cmdRET: integer := 1;
 constant cmdTEMP: integer := 16;
 constant cmdDEPTH: integer := 17;
 constant cmdRDEPTH: integer := 18;
+constant cmdDUP: integer := 19;
+constant cmdOVER: integer := 20;
 
 -- group 2; pop 1; push 0;
 constant cmdJMP: integer := 32;
 constant cmdCALL: integer := 33;
 constant cmdDROP: integer := 34;
-constant cmdOVER: integer := 35;
 
 -- group 3; pop 1; push 1;
 constant cmdFETCH: integer := 48;
 constant cmdINPORT: integer := 49;
 constant cmdNOT: integer := 50;
-constant cmdDUP: integer := 51;
+constant cmdSHL: integer := 51;
+constant cmdSHR: integer := 52;
+constant cmdSHRA: integer := 53;
 
 -- group 4; pop 2; push 0;
 constant cmdIF: integer := 64;
 constant cmdSTORE: integer := 65;
-constant cmdOUTPOR: integer := 66;
+constant cmdOUTPORT: integer := 66;
 
 -- group 5; pop 2; push 1;
-constant cmdSHL: integer := 80;
-constant cmdSHR: integer := 81;
-constant cmdNIP: integer := 82;
-constant cmdPLUS: integer := 83;
-constant cmdMINUS: integer := 84;
-constant cmdAND: integer := 85;
-constant cmdOR: integer := 86;
-constant cmdXOR: integer := 87;
-constant cmdEQUAL: integer := 88;
-constant cmdGREATER: integer := 89;
-constant cmdLESS: integer := 90;
-constant cmdMUL: integer := 91;
+constant cmdNIP: integer := 80;
+constant cmdPLUS: integer := 81;
+constant cmdMINUS: integer := 82;
+constant cmdAND: integer := 83;
+constant cmdOR: integer := 84;
+constant cmdXOR: integer := 85;
+constant cmdEQUAL: integer := 86;
+constant cmdGREATER: integer := 87;
+constant cmdLESS: integer := 88;
+constant cmdMUL: integer := 89;
 
 subtype DataSignal is std_logic_vector(DataWidth-1 downto 0);
 subtype AddrSignal is std_logic_vector(AddrWidth-1 downto 0);
@@ -158,6 +159,7 @@ signal fetching: std_logic;
 signal PrevCmdIsLIT: std_logic;
 
 signal CmdIsLit: std_logic;
+signal TempReg: DataSignal;
 
 begin
 
@@ -169,7 +171,7 @@ begin
       DSDoutA <= DSDinA;
     else
       DSDoutA <= DataStack(conv_integer(DSAddrA));
-    end if;       
+    end if;
     DSDoutB <= DataStack(conv_integer(DSAddrB));
   end if;
 end process;
@@ -243,59 +245,111 @@ begin
         fetching <= '0';
         DSWeA <= '0';
         RSWeA <= '0';
+        DataWeA <= '0';
+        iowr <= '0';
       else
         fetching <= '1';
         PrevCmdIsLIT <= Cmd(CodeWidth-1);
         
+        -- Data stack addr and we
         case conv_integer(cmd(8 downto 4)) is
           when 16 to 31 => -- LIT
             if PrevCmdIsLIT = '0' then
               DSAddrA <= DSAddrA + 1;
             end if;
-            DSWeA <= '1';
-          
+            DSWeA <= '1';          
           when 0 => -- group 0; pop 0; push 0
             null;
-                      
           when 1 => -- group 1; pop 0; push 1;
             DSAddrA <= DSAddrA + 1;
-            DSWeA <= '1';
-          
+            DSWeA <= '1';          
           when 2 => -- group 2; pop 1; push 0;
-            DSAddrA <= DSAddrA - 1;            
-            
+            DSAddrA <= DSAddrA - 1;                        
           when 3 => -- group 3; pop 1; push 1;
-            DSWeA <= '1';
-          
+            DSWeA <= '1';          
           when 4 => -- group 4; pop 2; push 0;
-            DSAddrA <= DSAddrA - 2;
-          
+            DSAddrA <= DSAddrA - 2;          
           when 5 => -- group 5; pop 2; push 1;
             DSAddrA <= DSAddrA - 1;
-            DSWeA <= '1';
-             
+            DSWeA <= '1';             
           when others => null;
         end case;
         
+        -- Data stack value
         case conv_integer(cmd) is
           when 256 to 511 => -- LIT
             if PrevCmdIsLIT = '1' then
               DSDinA <= DSDoutA(DataWidth - 9 downto 0) & Cmd(7 downto 0);
             else
               DSDinA <= sxt(Cmd(7 downto 0), DataWidth);              
-            end if;            
+            end if;
                       
-          when cmdPLUS =>
-            DSAddrA <= DSAddrA - 1;
-            DSDinA <= DSDoutA + DSDoutB;
-            DSWeA <= '1';
-            
-          when cmdDROP =>
-            DSAddrA <= DSAddrA - 1;
+          -- group 1; pop 0; push 1;
+          when cmdTEMP => DSDinA <= TempReg;
+          when cmdDEPTH => DSDinA <= DSAddrA;
+          when cmdRDEPTH => DSDinA <= RSAddrA;
+          when cmdDUP => DSDinA <= DSDoutA;
+          when cmdOVER => DSDinA <= DSDoutB;
+
+          -- group 2; pop 1; push 0;
+          -- empty          
+
+          -- group 3; pop 1; push 1;
+          when cmdFETCH => DSDinA <= DataDoutA;
+          when cmdINPORT => DSDinA <= Din;
+          when cmdNOT => -- logical
+            if DSDoutA = ext("0", DataWidth) then
+              DSDinA <= (others => '1');
+            else
+              DSDinA <= (others => '0');
+            end if;
+         when cmdSHL => DSDinA <= DSDoutA(DataWidth-2 downto 0) & '0';
+         when cmdSHR => DSDinA <= '0' & DSDoutA(DataWidth-1 downto 1);
+         when cmdSHRA => DSDinA <= DSDoutA(DataWidth-1) & DSDoutA(DataWidth-1 downto 1);
+
+          -- group 4; pop 2; push 0;          
+          when cmdSTORE =>            
+            DataAddrA <= DSDoutA;
+            DataDinA <= DSDoutB;
+            DataWeA <= '1';
+          when cmdOUTPORT =>
+            Addr <= DSDoutA;
+            Dout <= DSDoutB;
+            iowr <= '1';
+
+          -- group 5; pop 2; push 1;           
+          when cmdNIP => 
+            TempReg <= DSDoutB;
+            DSDinA <= DSDoutA;
+          when cmdPLUS => DSDinA <= DSDoutB + DSDoutA;
+          when cmdMINUS => DSDinA <= DSDoutB - DSDoutA;
+          when cmdAND => DSDinA <= DSDoutB and DSDoutA;
+          when cmdOR => DSDinA <= DSDoutB or DSDoutA;
+          when cmdXOR => DSDinA <= DSDoutB xor DSDoutA;
+          when cmdEQUAL => 
+            if DSDoutB = DSDoutA then
+              DSDinA <= (others => '1');
+            else
+              DSDinA <= (others => '0');
+            end if;          
+          when cmdGREATER => 
+            if signed(DSDoutB) > signed(DSDoutA) then
+              DSDinA <= (others => '1');
+            else
+              DSDinA <= (others => '0');
+            end if;
+          when cmdLESS => 
+            if signed(DSDoutB) < signed(DSDoutA) then
+              DSDinA <= (others => '1');
+            else
+              DSDinA <= (others => '0');
+            end if;
+          when cmdMUL => DSDinA <= DSDoutB * DSDoutA;
             
           when others => null;
         end case;
         
+        -- New ip and ret stack;
         case conv_integer(cmd) is
           when cmdJMP => -- jmp
             ip <= DSDoutA(ip'range);
@@ -323,8 +377,5 @@ begin
     end if;
   end if;
 end process;
-
-addr <= DSDoutA;
-dout <= DSDoutB;
 
 end Behavioral;

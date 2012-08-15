@@ -62,7 +62,7 @@ ARCHITECTURE behavior OF cpu_tb IS
    signal iowr : std_logic;
 
    -- Clock period definitions
-   constant clk_period : time := 10 ns;
+   constant clk_period : time := 20 ns;
  
 BEGIN
  
