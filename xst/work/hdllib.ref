@@ -1,2 +1,4 @@
-AR cpu behavioral D:/XProjects/vhdl_cpu/cpu.vhd sub00/vhpl01 1345009728
-EN cpu NULL D:/XProjects/vhdl_cpu/cpu.vhd sub00/vhpl00 1345009727
+AR cpu behavioral D:/XProjects/vhdl_cpu/cpu.vhd sub00/vhpl01 1345015341
+EN cpu NULL D:/XProjects/vhdl_cpu/cpu.vhd sub00/vhpl00 1345015340
+EN top NULL D:/XProjects/vhdl_cpu/top.vhd sub00/vhpl02 1345015342
+AR top behavioral D:/XProjects/vhdl_cpu/top.vhd sub00/vhpl03 1345015343

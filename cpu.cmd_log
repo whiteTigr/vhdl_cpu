@@ -51,3 +51,5 @@ xst -intstyle ise -ifn "D:/XProjects/vhdl_cpu/cpu.xst" -ofn "D:/XProjects/vhdl_c
 xst -intstyle ise -ifn "D:/XProjects/vhdl_cpu/cpu.xst" -ofn "D:/XProjects/vhdl_cpu/cpu.syr" 
 xst -intstyle ise -ifn "D:/XProjects/vhdl_cpu/cpu.xst" -ofn "D:/XProjects/vhdl_cpu/cpu.syr" 
 xst -intstyle ise -ifn "D:/XProjects/vhdl_cpu/cpu.xst" -ofn "D:/XProjects/vhdl_cpu/cpu.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s400-tq144-4 cpu.ngc cpu.ngd  
+map -intstyle ise -p xc3s400-tq144-4 -cm area -ir off -pr off -c 100 -o cpu_map.ncd cpu.ngd cpu.pcf 

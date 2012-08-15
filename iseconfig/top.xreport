@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2012-08-09T16:03:49</DateModified>
-  <ModuleName>cpu</ModuleName>
-  <SummaryTimeStamp>2012-08-09T15:58:40</SummaryTimeStamp>
+  <DateModified>2012-08-15T13:00:16</DateModified>
+  <ModuleName>top</ModuleName>
+  <SummaryTimeStamp>2012-08-15T10:44:42</SummaryTimeStamp>
   <SavedFilePath>D:/XProjects/vhdl_cpu/iseconfig/top.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>D:/XProjects/vhdl_cpu</ImplementationReportsDirectory>
+  <ImplementationReportsDirectory>D:/XProjects/vhdl_cpu\</ImplementationReportsDirectory>
   <DateInitialized>2012-08-09T14:37:19</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>
