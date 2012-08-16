@@ -1,0 +1,188 @@
+//! **************************************************************************
+// Written by: Map P.15xf on Wed Aug 15 11:23:14 2012
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "clk" LOCATE = SITE "P128" LEVEL 1;
+NET "clk_BUFGP/IBUFG" BEL "clk_BUFGP/BUFG.GCLKMUX" USELOCALCONNECT;
+PIN unit_cpu/Mram_CodeMemory.A_pins<12> = BEL "unit_cpu/Mram_CodeMemory.A"
+        PINNAME CLKA;
+PIN unit_cpu/Mram_CodeMemory.B_pins<12> = BEL "unit_cpu/Mram_CodeMemory.B"
+        PINNAME CLKB;
+TIMEGRP clk = BEL "q" BEL "unit_cpu/Mram_DataStack32.SLICEM_F" BEL
+        "unit_cpu/Mram_DataStack32.SLICEM_G" BEL
+        "unit_cpu/Mram_DataStack31.SLICEM_F" BEL
+        "unit_cpu/Mram_DataStack31.SLICEM_G" BEL
+        "unit_cpu/Mram_DataStack29.SLICEM_F" BEL
+        "unit_cpu/Mram_DataStack29.SLICEM_G" BEL
+        "unit_cpu/Mram_DataStack28.SLICEM_F" BEL
+        "unit_cpu/Mram_DataStack28.SLICEM_G" BEL
+        "unit_cpu/Mram_DataStack30.SLICEM_F" BEL
+        "unit_cpu/Mram_DataStack30.SLICEM_G" BEL
+        "unit_cpu/Mram_DataStack27.SLICEM_F" BEL
+        "unit_cpu/Mram_DataStack27.SLICEM_G" BEL
+        "unit_cpu/Mram_DataStack26.SLICEM_F" BEL
+        "unit_cpu/Mram_DataStack26.SLICEM_G" BEL
+        "unit_cpu/Mram_DataStack24.SLICEM_F" BEL
+        "unit_cpu/Mram_DataStack24.SLICEM_G" BEL
+        "unit_cpu/Mram_DataStack23.SLICEM_F" BEL
+        "unit_cpu/Mram_DataStack23.SLICEM_G" BEL
+        "unit_cpu/Mram_DataStack25.SLICEM_F" BEL
+        "unit_cpu/Mram_DataStack25.SLICEM_G" BEL
+        "unit_cpu/Mram_DataStack22.SLICEM_F" BEL
+        "unit_cpu/Mram_DataStack22.SLICEM_G" BEL
+        "unit_cpu/Mram_DataStack21.SLICEM_F" BEL
+        "unit_cpu/Mram_DataStack21.SLICEM_G" BEL
+        "unit_cpu/Mram_DataStack19.SLICEM_F" BEL
+        "unit_cpu/Mram_DataStack19.SLICEM_G" BEL
+        "unit_cpu/Mram_DataStack18.SLICEM_F" BEL
+        "unit_cpu/Mram_DataStack18.SLICEM_G" BEL
+        "unit_cpu/Mram_DataStack20.SLICEM_F" BEL
+        "unit_cpu/Mram_DataStack20.SLICEM_G" BEL
+        "unit_cpu/Mram_DataStack17.SLICEM_F" BEL
+        "unit_cpu/Mram_DataStack17.SLICEM_G" BEL
+        "unit_cpu/Mram_DataStack16.SLICEM_F" BEL
+        "unit_cpu/Mram_DataStack16.SLICEM_G" BEL
+        "unit_cpu/Mram_DataStack14.SLICEM_F" BEL
+        "unit_cpu/Mram_DataStack14.SLICEM_G" BEL
+        "unit_cpu/Mram_DataStack13.SLICEM_F" BEL
+        "unit_cpu/Mram_DataStack13.SLICEM_G" BEL
+        "unit_cpu/Mram_DataStack15.SLICEM_F" BEL
+        "unit_cpu/Mram_DataStack15.SLICEM_G" BEL
+        "unit_cpu/Mram_DataStack12.SLICEM_F" BEL
+        "unit_cpu/Mram_DataStack12.SLICEM_G" BEL
+        "unit_cpu/Mram_DataStack11.SLICEM_F" BEL
+        "unit_cpu/Mram_DataStack11.SLICEM_G" BEL
+        "unit_cpu/Mram_DataStack9.SLICEM_F" BEL
+        "unit_cpu/Mram_DataStack9.SLICEM_G" BEL
+        "unit_cpu/Mram_DataStack8.SLICEM_F" BEL
+        "unit_cpu/Mram_DataStack8.SLICEM_G" BEL
+        "unit_cpu/Mram_DataStack10.SLICEM_F" BEL
+        "unit_cpu/Mram_DataStack10.SLICEM_G" BEL
+        "unit_cpu/Mram_DataStack7.SLICEM_F" BEL
+        "unit_cpu/Mram_DataStack7.SLICEM_G" BEL
+        "unit_cpu/Mram_DataStack6.SLICEM_F" BEL
+        "unit_cpu/Mram_DataStack6.SLICEM_G" BEL
+        "unit_cpu/Mram_DataStack4.SLICEM_F" BEL
+        "unit_cpu/Mram_DataStack4.SLICEM_G" BEL
+        "unit_cpu/Mram_DataStack3.SLICEM_F" BEL
+        "unit_cpu/Mram_DataStack3.SLICEM_G" BEL
+        "unit_cpu/Mram_DataStack5.SLICEM_F" BEL
+        "unit_cpu/Mram_DataStack5.SLICEM_G" BEL
+        "unit_cpu/Mram_DataStack2.SLICEM_F" BEL
+        "unit_cpu/Mram_DataStack2.SLICEM_G" BEL
+        "unit_cpu/Mram_DataStack1.SLICEM_F" BEL
+        "unit_cpu/Mram_DataStack1.SLICEM_G" BEL "unit_cpu/Mram_RetStack9" BEL
+        "unit_cpu/Mram_RetStack7" BEL "unit_cpu/Mram_RetStack6" BEL
+        "unit_cpu/Mram_RetStack8" BEL "unit_cpu/Mram_RetStack5" BEL
+        "unit_cpu/Mram_RetStack4" BEL "unit_cpu/Mram_RetStack2" BEL
+        "unit_cpu/Mram_RetStack1" BEL "unit_cpu/Mram_RetStack3" BEL
+        "unit_cpu/dout_0" BEL "unit_cpu/TempReg_31" BEL "unit_cpu/TempReg_30"
+        BEL "unit_cpu/TempReg_29" BEL "unit_cpu/TempReg_28" BEL
+        "unit_cpu/TempReg_27" BEL "unit_cpu/TempReg_26" BEL
+        "unit_cpu/TempReg_25" BEL "unit_cpu/TempReg_24" BEL
+        "unit_cpu/TempReg_23" BEL "unit_cpu/TempReg_22" BEL
+        "unit_cpu/TempReg_21" BEL "unit_cpu/TempReg_20" BEL
+        "unit_cpu/TempReg_19" BEL "unit_cpu/TempReg_18" BEL
+        "unit_cpu/TempReg_17" BEL "unit_cpu/TempReg_16" BEL
+        "unit_cpu/TempReg_15" BEL "unit_cpu/TempReg_14" BEL
+        "unit_cpu/TempReg_13" BEL "unit_cpu/TempReg_12" BEL
+        "unit_cpu/TempReg_11" BEL "unit_cpu/TempReg_10" BEL
+        "unit_cpu/TempReg_9" BEL "unit_cpu/TempReg_8" BEL "unit_cpu/TempReg_7"
+        BEL "unit_cpu/TempReg_6" BEL "unit_cpu/TempReg_5" BEL
+        "unit_cpu/TempReg_4" BEL "unit_cpu/TempReg_3" BEL "unit_cpu/TempReg_2"
+        BEL "unit_cpu/TempReg_1" BEL "unit_cpu/TempReg_0" BEL
+        "unit_cpu/DataDinA_31" BEL "unit_cpu/DataDinA_30" BEL
+        "unit_cpu/DataDinA_29" BEL "unit_cpu/DataDinA_28" BEL
+        "unit_cpu/DataDinA_27" BEL "unit_cpu/DataDinA_26" BEL
+        "unit_cpu/DataDinA_25" BEL "unit_cpu/DataDinA_24" BEL
+        "unit_cpu/DataDinA_23" BEL "unit_cpu/DataDinA_22" BEL
+        "unit_cpu/DataDinA_21" BEL "unit_cpu/DataDinA_20" BEL
+        "unit_cpu/DataDinA_19" BEL "unit_cpu/DataDinA_18" BEL
+        "unit_cpu/DataDinA_17" BEL "unit_cpu/DataDinA_16" BEL
+        "unit_cpu/DataDinA_15" BEL "unit_cpu/DataDinA_14" BEL
+        "unit_cpu/DataDinA_13" BEL "unit_cpu/DataDinA_12" BEL
+        "unit_cpu/DataDinA_11" BEL "unit_cpu/DataDinA_10" BEL
+        "unit_cpu/DataDinA_9" BEL "unit_cpu/DataDinA_8" BEL
+        "unit_cpu/DataDinA_7" BEL "unit_cpu/DataDinA_6" BEL
+        "unit_cpu/DataDinA_5" BEL "unit_cpu/DataDinA_4" BEL
+        "unit_cpu/DataDinA_3" BEL "unit_cpu/DataDinA_2" BEL
+        "unit_cpu/DataDinA_1" BEL "unit_cpu/DataDinA_0" BEL
+        "unit_cpu/DSDoutB_31" BEL "unit_cpu/DSDoutB_30" BEL
+        "unit_cpu/DSDoutB_29" BEL "unit_cpu/DSDoutB_28" BEL
+        "unit_cpu/DSDoutB_27" BEL "unit_cpu/DSDoutB_26" BEL
+        "unit_cpu/DSDoutB_25" BEL "unit_cpu/DSDoutB_24" BEL
+        "unit_cpu/DSDoutB_23" BEL "unit_cpu/DSDoutB_22" BEL
+        "unit_cpu/DSDoutB_21" BEL "unit_cpu/DSDoutB_20" BEL
+        "unit_cpu/DSDoutB_19" BEL "unit_cpu/DSDoutB_18" BEL
+        "unit_cpu/DSDoutB_17" BEL "unit_cpu/DSDoutB_16" BEL
+        "unit_cpu/DSDoutB_15" BEL "unit_cpu/DSDoutB_14" BEL
+        "unit_cpu/DSDoutB_13" BEL "unit_cpu/DSDoutB_12" BEL
+        "unit_cpu/DSDoutB_11" BEL "unit_cpu/DSDoutB_10" BEL
+        "unit_cpu/DSDoutB_9" BEL "unit_cpu/DSDoutB_8" BEL "unit_cpu/DSDoutB_7"
+        BEL "unit_cpu/DSDoutB_6" BEL "unit_cpu/DSDoutB_5" BEL
+        "unit_cpu/DSDoutB_4" BEL "unit_cpu/DSDoutB_3" BEL "unit_cpu/DSDoutB_2"
+        BEL "unit_cpu/DSDoutB_1" BEL "unit_cpu/DSDoutB_0" BEL
+        "unit_cpu/PrevCmdIsLIT" BEL "unit_cpu/RSDinA_8" BEL
+        "unit_cpu/RSDinA_7" BEL "unit_cpu/RSDinA_6" BEL "unit_cpu/RSDinA_5"
+        BEL "unit_cpu/RSDinA_4" BEL "unit_cpu/RSDinA_3" BEL
+        "unit_cpu/RSDinA_2" BEL "unit_cpu/RSDinA_1" BEL "unit_cpu/RSDinA_0"
+        BEL "unit_cpu/addr_31" BEL "unit_cpu/addr_30" BEL "unit_cpu/addr_29"
+        BEL "unit_cpu/addr_28" BEL "unit_cpu/addr_27" BEL "unit_cpu/addr_26"
+        BEL "unit_cpu/addr_25" BEL "unit_cpu/addr_24" BEL "unit_cpu/addr_23"
+        BEL "unit_cpu/addr_22" BEL "unit_cpu/addr_21" BEL "unit_cpu/addr_20"
+        BEL "unit_cpu/addr_19" BEL "unit_cpu/addr_18" BEL "unit_cpu/addr_17"
+        BEL "unit_cpu/addr_16" BEL "unit_cpu/addr_15" BEL "unit_cpu/addr_14"
+        BEL "unit_cpu/addr_13" BEL "unit_cpu/addr_12" BEL "unit_cpu/addr_11"
+        BEL "unit_cpu/addr_10" BEL "unit_cpu/addr_9" BEL "unit_cpu/addr_8" BEL
+        "unit_cpu/addr_7" BEL "unit_cpu/addr_6" BEL "unit_cpu/addr_5" BEL
+        "unit_cpu/addr_4" BEL "unit_cpu/addr_3" BEL "unit_cpu/addr_2" BEL
+        "unit_cpu/addr_1" BEL "unit_cpu/addr_0" BEL "unit_cpu/DataAddrA_6" BEL
+        "unit_cpu/DataAddrA_5" BEL "unit_cpu/DataAddrA_4" BEL
+        "unit_cpu/DataAddrA_3" BEL "unit_cpu/DataAddrA_2" BEL
+        "unit_cpu/DataAddrA_1" BEL "unit_cpu/DataAddrA_0" BEL
+        "unit_cpu/DSAddrA_3" BEL "unit_cpu/DSAddrA_2" BEL "unit_cpu/DSAddrA_1"
+        BEL "unit_cpu/DSAddrA_0" BEL "unit_cpu/IP_8" BEL "unit_cpu/IP_7" BEL
+        "unit_cpu/IP_6" BEL "unit_cpu/IP_5" BEL "unit_cpu/IP_4" BEL
+        "unit_cpu/IP_3" BEL "unit_cpu/IP_2" BEL "unit_cpu/IP_1" BEL
+        "unit_cpu/IP_0" BEL "unit_cpu/RSAddrA_3" BEL "unit_cpu/RSAddrA_2" BEL
+        "unit_cpu/RSAddrA_1" BEL "unit_cpu/RSAddrA_0" BEL "unit_cpu/fetching"
+        BEL "unit_cpu/DSDoutA_31" BEL "unit_cpu/DSDoutA_30" BEL
+        "unit_cpu/DSDoutA_29" BEL "unit_cpu/DSDoutA_28" BEL
+        "unit_cpu/DSDoutA_27" BEL "unit_cpu/DSDoutA_26" BEL
+        "unit_cpu/DSDoutA_25" BEL "unit_cpu/DSDoutA_24" BEL
+        "unit_cpu/DSDoutA_23" BEL "unit_cpu/DSDoutA_22" BEL
+        "unit_cpu/DSDoutA_21" BEL "unit_cpu/DSDoutA_20" BEL
+        "unit_cpu/DSDoutA_19" BEL "unit_cpu/DSDoutA_18" BEL
+        "unit_cpu/DSDoutA_17" BEL "unit_cpu/DSDoutA_16" BEL
+        "unit_cpu/DSDoutA_15" BEL "unit_cpu/DSDoutA_14" BEL
+        "unit_cpu/DSDoutA_13" BEL "unit_cpu/DSDoutA_12" BEL
+        "unit_cpu/DSDoutA_11" BEL "unit_cpu/DSDoutA_10" BEL
+        "unit_cpu/DSDoutA_9" BEL "unit_cpu/DSDoutA_8" BEL "unit_cpu/DSDoutA_7"
+        BEL "unit_cpu/DSDoutA_6" BEL "unit_cpu/DSDoutA_5" BEL
+        "unit_cpu/DSDoutA_4" BEL "unit_cpu/DSDoutA_3" BEL "unit_cpu/DSDoutA_2"
+        BEL "unit_cpu/DSDoutA_1" BEL "unit_cpu/DSDoutA_0" BEL
+        "unit_cpu/DSDinA_31" BEL "unit_cpu/DSDinA_30" BEL "unit_cpu/DSDinA_29"
+        BEL "unit_cpu/DSDinA_28" BEL "unit_cpu/DSDinA_27" BEL
+        "unit_cpu/DSDinA_26" BEL "unit_cpu/DSDinA_25" BEL "unit_cpu/DSDinA_24"
+        BEL "unit_cpu/DSDinA_23" BEL "unit_cpu/DSDinA_22" BEL
+        "unit_cpu/DSDinA_21" BEL "unit_cpu/DSDinA_20" BEL "unit_cpu/DSDinA_19"
+        BEL "unit_cpu/DSDinA_18" BEL "unit_cpu/DSDinA_17" BEL
+        "unit_cpu/DSDinA_16" BEL "unit_cpu/DSDinA_15" BEL "unit_cpu/DSDinA_14"
+        BEL "unit_cpu/DSDinA_13" BEL "unit_cpu/DSDinA_12" BEL
+        "unit_cpu/DSDinA_11" BEL "unit_cpu/DSDinA_10" BEL "unit_cpu/DSDinA_9"
+        BEL "unit_cpu/DSDinA_8" BEL "unit_cpu/DSDinA_7" BEL
+        "unit_cpu/DSDinA_6" BEL "unit_cpu/DSDinA_5" BEL "unit_cpu/DSDinA_4"
+        BEL "unit_cpu/DSDinA_3" BEL "unit_cpu/DSDinA_2" BEL
+        "unit_cpu/DSDinA_1" BEL "unit_cpu/DSDinA_0" BEL "unit_cpu/RSWeA" BEL
+        "unit_cpu/DataWeA" BEL "unit_cpu/DSWeA" BEL "unit_cpu/RSDoutA_8" BEL
+        "unit_cpu/RSDoutA_7" BEL "unit_cpu/RSDoutA_6" BEL "unit_cpu/RSDoutA_5"
+        BEL "unit_cpu/RSDoutA_4" BEL "unit_cpu/RSDoutA_3" BEL
+        "unit_cpu/RSDoutA_2" BEL "unit_cpu/RSDoutA_1" BEL "unit_cpu/RSDoutA_0"
+        BEL "unit_cpu/iowr" BEL "unit_cpu/Mram_DataMemory.A" PIN
+        "unit_cpu/Mram_CodeMemory.A_pins<12>" PIN
+        "unit_cpu/Mram_CodeMemory.B_pins<12>" BEL "clk_BUFGP/BUFG.GCLKMUX" BEL
+        "clk_BUFGP/BUFG";
+TS_clk = PERIOD TIMEGRP "clk" 20 ns HIGH 50%;
+SCHEMATIC END;
+

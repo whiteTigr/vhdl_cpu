@@ -1,0 +1,684 @@
+--------------------------------------------------------------------------------
+Release 14.1 Trace  (nt)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+D:\Xilinx\14.1\ISE_DS\ISE\bin\nt\unwrapped\trce.exe -intstyle ise -v 3 -s 4 -n
+3 -fastpaths -xml top.twx top.ncd -o top.twr top.pcf -ucf top.ucf
+
+Design file:              top.ncd
+Physical constraint file: top.pcf
+Device,package,speed:     xc3s400,tq144,-4 (PRODUCTION 1.39 2012-04-23)
+Report level:             verbose report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:3412 - To improve timing, see the Timing Closure User Guide (UG612).
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+INFO:Timing:3390 - This architecture does not support a default System Jitter 
+   value, please add SYSTEM_JITTER constraint to the UCF to modify the Clock 
+   Uncertainty calculation.
+INFO:Timing:3389 - This architecture does not support 'Discrete Jitter' and 
+   'Phase Error' calculations, these terms will be zero in the Clock 
+   Uncertainty calculation.  Please make appropriate modification to 
+   SYSTEM_JITTER to account for the unsupported Discrete Jitter and Phase 
+   Error.
+
+================================================================================
+Timing constraint: TS_clk = PERIOD TIMEGRP "clk" 20 ns HIGH 50%;
+For more information, see Period Analysis in the Timing Closure User Guide (UG612).
+
+ 116680 paths analyzed, 1191 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
+ Minimum period is  19.667ns.
+--------------------------------------------------------------------------------
+
+Paths for end point unit_cpu/DSDinA_24 (SLICE_X25Y36.F1), 4322 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     0.333ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               unit_cpu/DSDoutB_13 (FF)
+  Destination:          unit_cpu/DSDinA_24 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      19.667ns (Levels of Logic = 7)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: unit_cpu/DSDoutB_13 to unit_cpu/DSDinA_24
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X20Y36.XQ      Tcko                  0.720   unit_cpu/DSDoutB<13>
+                                                       unit_cpu/DSDoutB_13
+    MULT18X18_X0Y3.A13   net (fanout=12)       3.956   unit_cpu/DSDoutB<13>
+    MULT18X18_X0Y3.P18   Tmult                 3.931   unit_cpu/Mmult_DSDinA_mult0000_submult_0
+                                                       unit_cpu/Mmult_DSDinA_mult0000_submult_0
+    SLICE_X6Y30.G1       net (fanout=1)        1.656   unit_cpu/Mmult_DSDinA_mult0000_submult_0_18
+    SLICE_X6Y30.COUT     Topcyg                1.096   unit_cpu/Mmult_DSDinA_mult0000_Madd_17
+                                                       unit_cpu/Mmult_DSDinA_mult0000_Madd_lut<3>
+                                                       unit_cpu/Mmult_DSDinA_mult0000_Madd_cy<3>
+    SLICE_X6Y31.CIN      net (fanout=1)        0.000   unit_cpu/Mmult_DSDinA_mult0000_Madd_cy<3>
+    SLICE_X6Y31.COUT     Tbyp                  0.120   unit_cpu/Mmult_DSDinA_mult0000_Madd_19
+                                                       unit_cpu/Mmult_DSDinA_mult0000_Madd_cy<4>
+                                                       unit_cpu/Mmult_DSDinA_mult0000_Madd_cy<5>
+    SLICE_X6Y32.CIN      net (fanout=1)        0.000   unit_cpu/Mmult_DSDinA_mult0000_Madd_cy<5>
+    SLICE_X6Y32.Y        Tciny                 0.923   unit_cpu/Mmult_DSDinA_mult0000_Madd_21
+                                                       unit_cpu/Mmult_DSDinA_mult0000_Madd_cy<6>
+                                                       unit_cpu/Mmult_DSDinA_mult0000_Madd_xor<7>
+    SLICE_X27Y32.G1      net (fanout=1)        2.730   unit_cpu/Mmult_DSDinA_mult0000_Madd_22
+    SLICE_X27Y32.COUT    Topcyg                1.039   unit_cpu/DSDinA_mult0000<21>
+                                                       unit_cpu/Mmult_DSDinA_mult0000_Madd1_lut<22>
+                                                       unit_cpu/Mmult_DSDinA_mult0000_Madd1_cy<22>
+    SLICE_X27Y33.CIN     net (fanout=1)        0.000   unit_cpu/Mmult_DSDinA_mult0000_Madd1_cy<22>
+    SLICE_X27Y33.Y       Tciny                 0.923   unit_cpu/DSDinA_mult0000<23>
+                                                       unit_cpu/Mmult_DSDinA_mult0000_Madd1_cy<23>
+                                                       unit_cpu/Mmult_DSDinA_mult0000_Madd1_xor<24>
+    SLICE_X25Y36.F1      net (fanout=1)        1.940   unit_cpu/DSDinA_mult0000<24>
+    SLICE_X25Y36.CLK     Tfck                  0.633   unit_cpu/DSDinA<24>
+                                                       unit_cpu/DSDinA_mux0001<24>114
+                                                       unit_cpu/DSDinA_24
+    -------------------------------------------------  ---------------------------
+    Total                                     19.667ns (9.385ns logic, 10.282ns route)
+                                                       (47.7% logic, 52.3% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     0.473ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               unit_cpu/DSDoutB_13 (FF)
+  Destination:          unit_cpu/DSDinA_24 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      19.527ns (Levels of Logic = 7)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: unit_cpu/DSDoutB_13 to unit_cpu/DSDinA_24
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X20Y36.XQ      Tcko                  0.720   unit_cpu/DSDoutB<13>
+                                                       unit_cpu/DSDoutB_13
+    MULT18X18_X0Y3.A13   net (fanout=12)       3.956   unit_cpu/DSDoutB<13>
+    MULT18X18_X0Y3.P17   Tmult                 3.860   unit_cpu/Mmult_DSDinA_mult0000_submult_0
+                                                       unit_cpu/Mmult_DSDinA_mult0000_submult_0
+    SLICE_X6Y30.F2       net (fanout=1)        1.599   unit_cpu/Mmult_DSDinA_mult0000_submult_0_17
+    SLICE_X6Y30.COUT     Topcyf                1.084   unit_cpu/Mmult_DSDinA_mult0000_Madd_17
+                                                       unit_cpu/Mmult_DSDinA_mult0000_Madd_lut<2>
+                                                       unit_cpu/Mmult_DSDinA_mult0000_Madd_cy<2>
+                                                       unit_cpu/Mmult_DSDinA_mult0000_Madd_cy<3>
+    SLICE_X6Y31.CIN      net (fanout=1)        0.000   unit_cpu/Mmult_DSDinA_mult0000_Madd_cy<3>
+    SLICE_X6Y31.COUT     Tbyp                  0.120   unit_cpu/Mmult_DSDinA_mult0000_Madd_19
+                                                       unit_cpu/Mmult_DSDinA_mult0000_Madd_cy<4>
+                                                       unit_cpu/Mmult_DSDinA_mult0000_Madd_cy<5>
+    SLICE_X6Y32.CIN      net (fanout=1)        0.000   unit_cpu/Mmult_DSDinA_mult0000_Madd_cy<5>
+    SLICE_X6Y32.Y        Tciny                 0.923   unit_cpu/Mmult_DSDinA_mult0000_Madd_21
+                                                       unit_cpu/Mmult_DSDinA_mult0000_Madd_cy<6>
+                                                       unit_cpu/Mmult_DSDinA_mult0000_Madd_xor<7>
+    SLICE_X27Y32.G1      net (fanout=1)        2.730   unit_cpu/Mmult_DSDinA_mult0000_Madd_22
+    SLICE_X27Y32.COUT    Topcyg                1.039   unit_cpu/DSDinA_mult0000<21>
+                                                       unit_cpu/Mmult_DSDinA_mult0000_Madd1_lut<22>
+                                                       unit_cpu/Mmult_DSDinA_mult0000_Madd1_cy<22>
+    SLICE_X27Y33.CIN     net (fanout=1)        0.000   unit_cpu/Mmult_DSDinA_mult0000_Madd1_cy<22>
+    SLICE_X27Y33.Y       Tciny                 0.923   unit_cpu/DSDinA_mult0000<23>
+                                                       unit_cpu/Mmult_DSDinA_mult0000_Madd1_cy<23>
+                                                       unit_cpu/Mmult_DSDinA_mult0000_Madd1_xor<24>
+    SLICE_X25Y36.F1      net (fanout=1)        1.940   unit_cpu/DSDinA_mult0000<24>
+    SLICE_X25Y36.CLK     Tfck                  0.633   unit_cpu/DSDinA<24>
+                                                       unit_cpu/DSDinA_mux0001<24>114
+                                                       unit_cpu/DSDinA_24
+    -------------------------------------------------  ---------------------------
+    Total                                     19.527ns (9.302ns logic, 10.225ns route)
+                                                       (47.6% logic, 52.4% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     0.483ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               unit_cpu/DSDoutB_13 (FF)
+  Destination:          unit_cpu/DSDinA_24 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      19.517ns (Levels of Logic = 7)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: unit_cpu/DSDoutB_13 to unit_cpu/DSDinA_24
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X20Y36.XQ      Tcko                  0.720   unit_cpu/DSDoutB<13>
+                                                       unit_cpu/DSDoutB_13
+    MULT18X18_X0Y3.A13   net (fanout=12)       3.956   unit_cpu/DSDoutB<13>
+    MULT18X18_X0Y3.P18   Tmult                 3.931   unit_cpu/Mmult_DSDinA_mult0000_submult_0
+                                                       unit_cpu/Mmult_DSDinA_mult0000_submult_0
+    SLICE_X6Y30.G1       net (fanout=1)        1.656   unit_cpu/Mmult_DSDinA_mult0000_submult_0_18
+    SLICE_X6Y30.COUT     Topcyg                1.096   unit_cpu/Mmult_DSDinA_mult0000_Madd_17
+                                                       unit_cpu/Mmult_DSDinA_mult0000_Madd_lut<3>
+                                                       unit_cpu/Mmult_DSDinA_mult0000_Madd_cy<3>
+    SLICE_X6Y31.CIN      net (fanout=1)        0.000   unit_cpu/Mmult_DSDinA_mult0000_Madd_cy<3>
+    SLICE_X6Y31.COUT     Tbyp                  0.120   unit_cpu/Mmult_DSDinA_mult0000_Madd_19
+                                                       unit_cpu/Mmult_DSDinA_mult0000_Madd_cy<4>
+                                                       unit_cpu/Mmult_DSDinA_mult0000_Madd_cy<5>
+    SLICE_X6Y32.CIN      net (fanout=1)        0.000   unit_cpu/Mmult_DSDinA_mult0000_Madd_cy<5>
+    SLICE_X6Y32.Y        Tciny                 0.923   unit_cpu/Mmult_DSDinA_mult0000_Madd_21
+                                                       unit_cpu/Mmult_DSDinA_mult0000_Madd_cy<6>
+                                                       unit_cpu/Mmult_DSDinA_mult0000_Madd_xor<7>
+    SLICE_X27Y32.G1      net (fanout=1)        2.730   unit_cpu/Mmult_DSDinA_mult0000_Madd_22
+    SLICE_X27Y32.COUT    Topcyg                0.889   unit_cpu/DSDinA_mult0000<21>
+                                                       unit_cpu/Mmult_DSDinA_mult0000_Madd1_cy<22>
+    SLICE_X27Y33.CIN     net (fanout=1)        0.000   unit_cpu/Mmult_DSDinA_mult0000_Madd1_cy<22>
+    SLICE_X27Y33.Y       Tciny                 0.923   unit_cpu/DSDinA_mult0000<23>
+                                                       unit_cpu/Mmult_DSDinA_mult0000_Madd1_cy<23>
+                                                       unit_cpu/Mmult_DSDinA_mult0000_Madd1_xor<24>
+    SLICE_X25Y36.F1      net (fanout=1)        1.940   unit_cpu/DSDinA_mult0000<24>
+    SLICE_X25Y36.CLK     Tfck                  0.633   unit_cpu/DSDinA<24>
+                                                       unit_cpu/DSDinA_mux0001<24>114
+                                                       unit_cpu/DSDinA_24
+    -------------------------------------------------  ---------------------------
+    Total                                     19.517ns (9.235ns logic, 10.282ns route)
+                                                       (47.3% logic, 52.7% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point unit_cpu/DSDinA_30 (SLICE_X21Y35.F2), 14650 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     0.894ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               unit_cpu/DSDoutB_13 (FF)
+  Destination:          unit_cpu/DSDinA_30 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      19.106ns (Levels of Logic = 10)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: unit_cpu/DSDoutB_13 to unit_cpu/DSDinA_30
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X20Y36.XQ      Tcko                  0.720   unit_cpu/DSDoutB<13>
+                                                       unit_cpu/DSDoutB_13
+    MULT18X18_X0Y3.A13   net (fanout=12)       3.956   unit_cpu/DSDoutB<13>
+    MULT18X18_X0Y3.P18   Tmult                 3.931   unit_cpu/Mmult_DSDinA_mult0000_submult_0
+                                                       unit_cpu/Mmult_DSDinA_mult0000_submult_0
+    SLICE_X6Y30.G1       net (fanout=1)        1.656   unit_cpu/Mmult_DSDinA_mult0000_submult_0_18
+    SLICE_X6Y30.COUT     Topcyg                1.096   unit_cpu/Mmult_DSDinA_mult0000_Madd_17
+                                                       unit_cpu/Mmult_DSDinA_mult0000_Madd_lut<3>
+                                                       unit_cpu/Mmult_DSDinA_mult0000_Madd_cy<3>
+    SLICE_X6Y31.CIN      net (fanout=1)        0.000   unit_cpu/Mmult_DSDinA_mult0000_Madd_cy<3>
+    SLICE_X6Y31.COUT     Tbyp                  0.120   unit_cpu/Mmult_DSDinA_mult0000_Madd_19
+                                                       unit_cpu/Mmult_DSDinA_mult0000_Madd_cy<4>
+                                                       unit_cpu/Mmult_DSDinA_mult0000_Madd_cy<5>
+    SLICE_X6Y32.CIN      net (fanout=1)        0.000   unit_cpu/Mmult_DSDinA_mult0000_Madd_cy<5>
+    SLICE_X6Y32.Y        Tciny                 0.923   unit_cpu/Mmult_DSDinA_mult0000_Madd_21
+                                                       unit_cpu/Mmult_DSDinA_mult0000_Madd_cy<6>
+                                                       unit_cpu/Mmult_DSDinA_mult0000_Madd_xor<7>
+    SLICE_X27Y32.G1      net (fanout=1)        2.730   unit_cpu/Mmult_DSDinA_mult0000_Madd_22
+    SLICE_X27Y32.COUT    Topcyg                1.039   unit_cpu/DSDinA_mult0000<21>
+                                                       unit_cpu/Mmult_DSDinA_mult0000_Madd1_lut<22>
+                                                       unit_cpu/Mmult_DSDinA_mult0000_Madd1_cy<22>
+    SLICE_X27Y33.CIN     net (fanout=1)        0.000   unit_cpu/Mmult_DSDinA_mult0000_Madd1_cy<22>
+    SLICE_X27Y33.COUT    Tbyp                  0.128   unit_cpu/DSDinA_mult0000<23>
+                                                       unit_cpu/Mmult_DSDinA_mult0000_Madd1_cy<23>
+                                                       unit_cpu/Mmult_DSDinA_mult0000_Madd1_cy<24>
+    SLICE_X27Y34.CIN     net (fanout=1)        0.000   unit_cpu/Mmult_DSDinA_mult0000_Madd1_cy<24>
+    SLICE_X27Y34.COUT    Tbyp                  0.128   unit_cpu/DSDinA_mult0000<25>
+                                                       unit_cpu/Mmult_DSDinA_mult0000_Madd1_cy<25>
+                                                       unit_cpu/Mmult_DSDinA_mult0000_Madd1_cy<26>
+    SLICE_X27Y35.CIN     net (fanout=1)        0.000   unit_cpu/Mmult_DSDinA_mult0000_Madd1_cy<26>
+    SLICE_X27Y35.COUT    Tbyp                  0.128   unit_cpu/DSDinA_mult0000<27>
+                                                       unit_cpu/Mmult_DSDinA_mult0000_Madd1_cy<27>
+                                                       unit_cpu/Mmult_DSDinA_mult0000_Madd1_cy<28>
+    SLICE_X27Y36.CIN     net (fanout=1)        0.000   unit_cpu/Mmult_DSDinA_mult0000_Madd1_cy<28>
+    SLICE_X27Y36.Y       Tciny                 0.923   unit_cpu/DSDinA_mult0000<29>
+                                                       unit_cpu/Mmult_DSDinA_mult0000_Madd1_cy<29>
+                                                       unit_cpu/Mmult_DSDinA_mult0000_Madd1_xor<30>
+    SLICE_X21Y35.F2      net (fanout=1)        0.995   unit_cpu/DSDinA_mult0000<30>
+    SLICE_X21Y35.CLK     Tfck                  0.633   unit_cpu/DSDinA<30>
+                                                       unit_cpu/DSDinA_mux0001<30>114
+                                                       unit_cpu/DSDinA_30
+    -------------------------------------------------  ---------------------------
+    Total                                     19.106ns (9.769ns logic, 9.337ns route)
+                                                       (51.1% logic, 48.9% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     1.034ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               unit_cpu/DSDoutB_13 (FF)
+  Destination:          unit_cpu/DSDinA_30 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      18.966ns (Levels of Logic = 10)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: unit_cpu/DSDoutB_13 to unit_cpu/DSDinA_30
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X20Y36.XQ      Tcko                  0.720   unit_cpu/DSDoutB<13>
+                                                       unit_cpu/DSDoutB_13
+    MULT18X18_X0Y3.A13   net (fanout=12)       3.956   unit_cpu/DSDoutB<13>
+    MULT18X18_X0Y3.P17   Tmult                 3.860   unit_cpu/Mmult_DSDinA_mult0000_submult_0
+                                                       unit_cpu/Mmult_DSDinA_mult0000_submult_0
+    SLICE_X6Y30.F2       net (fanout=1)        1.599   unit_cpu/Mmult_DSDinA_mult0000_submult_0_17
+    SLICE_X6Y30.COUT     Topcyf                1.084   unit_cpu/Mmult_DSDinA_mult0000_Madd_17
+                                                       unit_cpu/Mmult_DSDinA_mult0000_Madd_lut<2>
+                                                       unit_cpu/Mmult_DSDinA_mult0000_Madd_cy<2>
+                                                       unit_cpu/Mmult_DSDinA_mult0000_Madd_cy<3>
+    SLICE_X6Y31.CIN      net (fanout=1)        0.000   unit_cpu/Mmult_DSDinA_mult0000_Madd_cy<3>
+    SLICE_X6Y31.COUT     Tbyp                  0.120   unit_cpu/Mmult_DSDinA_mult0000_Madd_19
+                                                       unit_cpu/Mmult_DSDinA_mult0000_Madd_cy<4>
+                                                       unit_cpu/Mmult_DSDinA_mult0000_Madd_cy<5>
+    SLICE_X6Y32.CIN      net (fanout=1)        0.000   unit_cpu/Mmult_DSDinA_mult0000_Madd_cy<5>
+    SLICE_X6Y32.Y        Tciny                 0.923   unit_cpu/Mmult_DSDinA_mult0000_Madd_21
+                                                       unit_cpu/Mmult_DSDinA_mult0000_Madd_cy<6>
+                                                       unit_cpu/Mmult_DSDinA_mult0000_Madd_xor<7>
+    SLICE_X27Y32.G1      net (fanout=1)        2.730   unit_cpu/Mmult_DSDinA_mult0000_Madd_22
+    SLICE_X27Y32.COUT    Topcyg                1.039   unit_cpu/DSDinA_mult0000<21>
+                                                       unit_cpu/Mmult_DSDinA_mult0000_Madd1_lut<22>
+                                                       unit_cpu/Mmult_DSDinA_mult0000_Madd1_cy<22>
+    SLICE_X27Y33.CIN     net (fanout=1)        0.000   unit_cpu/Mmult_DSDinA_mult0000_Madd1_cy<22>
+    SLICE_X27Y33.COUT    Tbyp                  0.128   unit_cpu/DSDinA_mult0000<23>
+                                                       unit_cpu/Mmult_DSDinA_mult0000_Madd1_cy<23>
+                                                       unit_cpu/Mmult_DSDinA_mult0000_Madd1_cy<24>
+    SLICE_X27Y34.CIN     net (fanout=1)        0.000   unit_cpu/Mmult_DSDinA_mult0000_Madd1_cy<24>
+    SLICE_X27Y34.COUT    Tbyp                  0.128   unit_cpu/DSDinA_mult0000<25>
+                                                       unit_cpu/Mmult_DSDinA_mult0000_Madd1_cy<25>
+                                                       unit_cpu/Mmult_DSDinA_mult0000_Madd1_cy<26>
+    SLICE_X27Y35.CIN     net (fanout=1)        0.000   unit_cpu/Mmult_DSDinA_mult0000_Madd1_cy<26>
+    SLICE_X27Y35.COUT    Tbyp                  0.128   unit_cpu/DSDinA_mult0000<27>
+                                                       unit_cpu/Mmult_DSDinA_mult0000_Madd1_cy<27>
+                                                       unit_cpu/Mmult_DSDinA_mult0000_Madd1_cy<28>
+    SLICE_X27Y36.CIN     net (fanout=1)        0.000   unit_cpu/Mmult_DSDinA_mult0000_Madd1_cy<28>
+    SLICE_X27Y36.Y       Tciny                 0.923   unit_cpu/DSDinA_mult0000<29>
+                                                       unit_cpu/Mmult_DSDinA_mult0000_Madd1_cy<29>
+                                                       unit_cpu/Mmult_DSDinA_mult0000_Madd1_xor<30>
+    SLICE_X21Y35.F2      net (fanout=1)        0.995   unit_cpu/DSDinA_mult0000<30>
+    SLICE_X21Y35.CLK     Tfck                  0.633   unit_cpu/DSDinA<30>
+                                                       unit_cpu/DSDinA_mux0001<30>114
+                                                       unit_cpu/DSDinA_30
+    -------------------------------------------------  ---------------------------
+    Total                                     18.966ns (9.686ns logic, 9.280ns route)
+                                                       (51.1% logic, 48.9% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     1.044ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               unit_cpu/DSDoutB_13 (FF)
+  Destination:          unit_cpu/DSDinA_30 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      18.956ns (Levels of Logic = 10)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: unit_cpu/DSDoutB_13 to unit_cpu/DSDinA_30
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X20Y36.XQ      Tcko                  0.720   unit_cpu/DSDoutB<13>
+                                                       unit_cpu/DSDoutB_13
+    MULT18X18_X0Y3.A13   net (fanout=12)       3.956   unit_cpu/DSDoutB<13>
+    MULT18X18_X0Y3.P18   Tmult                 3.931   unit_cpu/Mmult_DSDinA_mult0000_submult_0
+                                                       unit_cpu/Mmult_DSDinA_mult0000_submult_0
+    SLICE_X6Y30.G1       net (fanout=1)        1.656   unit_cpu/Mmult_DSDinA_mult0000_submult_0_18
+    SLICE_X6Y30.COUT     Topcyg                1.096   unit_cpu/Mmult_DSDinA_mult0000_Madd_17
+                                                       unit_cpu/Mmult_DSDinA_mult0000_Madd_lut<3>
+                                                       unit_cpu/Mmult_DSDinA_mult0000_Madd_cy<3>
+    SLICE_X6Y31.CIN      net (fanout=1)        0.000   unit_cpu/Mmult_DSDinA_mult0000_Madd_cy<3>
+    SLICE_X6Y31.COUT     Tbyp                  0.120   unit_cpu/Mmult_DSDinA_mult0000_Madd_19
+                                                       unit_cpu/Mmult_DSDinA_mult0000_Madd_cy<4>
+                                                       unit_cpu/Mmult_DSDinA_mult0000_Madd_cy<5>
+    SLICE_X6Y32.CIN      net (fanout=1)        0.000   unit_cpu/Mmult_DSDinA_mult0000_Madd_cy<5>
+    SLICE_X6Y32.Y        Tciny                 0.923   unit_cpu/Mmult_DSDinA_mult0000_Madd_21
+                                                       unit_cpu/Mmult_DSDinA_mult0000_Madd_cy<6>
+                                                       unit_cpu/Mmult_DSDinA_mult0000_Madd_xor<7>
+    SLICE_X27Y32.G1      net (fanout=1)        2.730   unit_cpu/Mmult_DSDinA_mult0000_Madd_22
+    SLICE_X27Y32.COUT    Topcyg                0.889   unit_cpu/DSDinA_mult0000<21>
+                                                       unit_cpu/Mmult_DSDinA_mult0000_Madd1_cy<22>
+    SLICE_X27Y33.CIN     net (fanout=1)        0.000   unit_cpu/Mmult_DSDinA_mult0000_Madd1_cy<22>
+    SLICE_X27Y33.COUT    Tbyp                  0.128   unit_cpu/DSDinA_mult0000<23>
+                                                       unit_cpu/Mmult_DSDinA_mult0000_Madd1_cy<23>
+                                                       unit_cpu/Mmult_DSDinA_mult0000_Madd1_cy<24>
+    SLICE_X27Y34.CIN     net (fanout=1)        0.000   unit_cpu/Mmult_DSDinA_mult0000_Madd1_cy<24>
+    SLICE_X27Y34.COUT    Tbyp                  0.128   unit_cpu/DSDinA_mult0000<25>
+                                                       unit_cpu/Mmult_DSDinA_mult0000_Madd1_cy<25>
+                                                       unit_cpu/Mmult_DSDinA_mult0000_Madd1_cy<26>
+    SLICE_X27Y35.CIN     net (fanout=1)        0.000   unit_cpu/Mmult_DSDinA_mult0000_Madd1_cy<26>
+    SLICE_X27Y35.COUT    Tbyp                  0.128   unit_cpu/DSDinA_mult0000<27>
+                                                       unit_cpu/Mmult_DSDinA_mult0000_Madd1_cy<27>
+                                                       unit_cpu/Mmult_DSDinA_mult0000_Madd1_cy<28>
+    SLICE_X27Y36.CIN     net (fanout=1)        0.000   unit_cpu/Mmult_DSDinA_mult0000_Madd1_cy<28>
+    SLICE_X27Y36.Y       Tciny                 0.923   unit_cpu/DSDinA_mult0000<29>
+                                                       unit_cpu/Mmult_DSDinA_mult0000_Madd1_cy<29>
+                                                       unit_cpu/Mmult_DSDinA_mult0000_Madd1_xor<30>
+    SLICE_X21Y35.F2      net (fanout=1)        0.995   unit_cpu/DSDinA_mult0000<30>
+    SLICE_X21Y35.CLK     Tfck                  0.633   unit_cpu/DSDinA<30>
+                                                       unit_cpu/DSDinA_mux0001<30>114
+                                                       unit_cpu/DSDinA_30
+    -------------------------------------------------  ---------------------------
+    Total                                     18.956ns (9.619ns logic, 9.337ns route)
+                                                       (50.7% logic, 49.3% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point unit_cpu/DSDinA_25 (SLICE_X25Y38.F1), 5590 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     0.926ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               unit_cpu/DSDoutB_13 (FF)
+  Destination:          unit_cpu/DSDinA_25 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      19.074ns (Levels of Logic = 8)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: unit_cpu/DSDoutB_13 to unit_cpu/DSDinA_25
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X20Y36.XQ      Tcko                  0.720   unit_cpu/DSDoutB<13>
+                                                       unit_cpu/DSDoutB_13
+    MULT18X18_X0Y3.A13   net (fanout=12)       3.956   unit_cpu/DSDoutB<13>
+    MULT18X18_X0Y3.P18   Tmult                 3.931   unit_cpu/Mmult_DSDinA_mult0000_submult_0
+                                                       unit_cpu/Mmult_DSDinA_mult0000_submult_0
+    SLICE_X6Y30.G1       net (fanout=1)        1.656   unit_cpu/Mmult_DSDinA_mult0000_submult_0_18
+    SLICE_X6Y30.COUT     Topcyg                1.096   unit_cpu/Mmult_DSDinA_mult0000_Madd_17
+                                                       unit_cpu/Mmult_DSDinA_mult0000_Madd_lut<3>
+                                                       unit_cpu/Mmult_DSDinA_mult0000_Madd_cy<3>
+    SLICE_X6Y31.CIN      net (fanout=1)        0.000   unit_cpu/Mmult_DSDinA_mult0000_Madd_cy<3>
+    SLICE_X6Y31.COUT     Tbyp                  0.120   unit_cpu/Mmult_DSDinA_mult0000_Madd_19
+                                                       unit_cpu/Mmult_DSDinA_mult0000_Madd_cy<4>
+                                                       unit_cpu/Mmult_DSDinA_mult0000_Madd_cy<5>
+    SLICE_X6Y32.CIN      net (fanout=1)        0.000   unit_cpu/Mmult_DSDinA_mult0000_Madd_cy<5>
+    SLICE_X6Y32.Y        Tciny                 0.923   unit_cpu/Mmult_DSDinA_mult0000_Madd_21
+                                                       unit_cpu/Mmult_DSDinA_mult0000_Madd_cy<6>
+                                                       unit_cpu/Mmult_DSDinA_mult0000_Madd_xor<7>
+    SLICE_X27Y32.G1      net (fanout=1)        2.730   unit_cpu/Mmult_DSDinA_mult0000_Madd_22
+    SLICE_X27Y32.COUT    Topcyg                1.039   unit_cpu/DSDinA_mult0000<21>
+                                                       unit_cpu/Mmult_DSDinA_mult0000_Madd1_lut<22>
+                                                       unit_cpu/Mmult_DSDinA_mult0000_Madd1_cy<22>
+    SLICE_X27Y33.CIN     net (fanout=1)        0.000   unit_cpu/Mmult_DSDinA_mult0000_Madd1_cy<22>
+    SLICE_X27Y33.COUT    Tbyp                  0.128   unit_cpu/DSDinA_mult0000<23>
+                                                       unit_cpu/Mmult_DSDinA_mult0000_Madd1_cy<23>
+                                                       unit_cpu/Mmult_DSDinA_mult0000_Madd1_cy<24>
+    SLICE_X27Y34.CIN     net (fanout=1)        0.000   unit_cpu/Mmult_DSDinA_mult0000_Madd1_cy<24>
+    SLICE_X27Y34.X       Tcinx                 0.904   unit_cpu/DSDinA_mult0000<25>
+                                                       unit_cpu/Mmult_DSDinA_mult0000_Madd1_xor<25>
+    SLICE_X25Y38.F1      net (fanout=1)        1.238   unit_cpu/DSDinA_mult0000<25>
+    SLICE_X25Y38.CLK     Tfck                  0.633   unit_cpu/DSDinA<25>
+                                                       unit_cpu/DSDinA_mux0001<25>114
+                                                       unit_cpu/DSDinA_25
+    -------------------------------------------------  ---------------------------
+    Total                                     19.074ns (9.494ns logic, 9.580ns route)
+                                                       (49.8% logic, 50.2% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     1.066ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               unit_cpu/DSDoutB_13 (FF)
+  Destination:          unit_cpu/DSDinA_25 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      18.934ns (Levels of Logic = 8)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: unit_cpu/DSDoutB_13 to unit_cpu/DSDinA_25
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X20Y36.XQ      Tcko                  0.720   unit_cpu/DSDoutB<13>
+                                                       unit_cpu/DSDoutB_13
+    MULT18X18_X0Y3.A13   net (fanout=12)       3.956   unit_cpu/DSDoutB<13>
+    MULT18X18_X0Y3.P17   Tmult                 3.860   unit_cpu/Mmult_DSDinA_mult0000_submult_0
+                                                       unit_cpu/Mmult_DSDinA_mult0000_submult_0
+    SLICE_X6Y30.F2       net (fanout=1)        1.599   unit_cpu/Mmult_DSDinA_mult0000_submult_0_17
+    SLICE_X6Y30.COUT     Topcyf                1.084   unit_cpu/Mmult_DSDinA_mult0000_Madd_17
+                                                       unit_cpu/Mmult_DSDinA_mult0000_Madd_lut<2>
+                                                       unit_cpu/Mmult_DSDinA_mult0000_Madd_cy<2>
+                                                       unit_cpu/Mmult_DSDinA_mult0000_Madd_cy<3>
+    SLICE_X6Y31.CIN      net (fanout=1)        0.000   unit_cpu/Mmult_DSDinA_mult0000_Madd_cy<3>
+    SLICE_X6Y31.COUT     Tbyp                  0.120   unit_cpu/Mmult_DSDinA_mult0000_Madd_19
+                                                       unit_cpu/Mmult_DSDinA_mult0000_Madd_cy<4>
+                                                       unit_cpu/Mmult_DSDinA_mult0000_Madd_cy<5>
+    SLICE_X6Y32.CIN      net (fanout=1)        0.000   unit_cpu/Mmult_DSDinA_mult0000_Madd_cy<5>
+    SLICE_X6Y32.Y        Tciny                 0.923   unit_cpu/Mmult_DSDinA_mult0000_Madd_21
+                                                       unit_cpu/Mmult_DSDinA_mult0000_Madd_cy<6>
+                                                       unit_cpu/Mmult_DSDinA_mult0000_Madd_xor<7>
+    SLICE_X27Y32.G1      net (fanout=1)        2.730   unit_cpu/Mmult_DSDinA_mult0000_Madd_22
+    SLICE_X27Y32.COUT    Topcyg                1.039   unit_cpu/DSDinA_mult0000<21>
+                                                       unit_cpu/Mmult_DSDinA_mult0000_Madd1_lut<22>
+                                                       unit_cpu/Mmult_DSDinA_mult0000_Madd1_cy<22>
+    SLICE_X27Y33.CIN     net (fanout=1)        0.000   unit_cpu/Mmult_DSDinA_mult0000_Madd1_cy<22>
+    SLICE_X27Y33.COUT    Tbyp                  0.128   unit_cpu/DSDinA_mult0000<23>
+                                                       unit_cpu/Mmult_DSDinA_mult0000_Madd1_cy<23>
+                                                       unit_cpu/Mmult_DSDinA_mult0000_Madd1_cy<24>
+    SLICE_X27Y34.CIN     net (fanout=1)        0.000   unit_cpu/Mmult_DSDinA_mult0000_Madd1_cy<24>
+    SLICE_X27Y34.X       Tcinx                 0.904   unit_cpu/DSDinA_mult0000<25>
+                                                       unit_cpu/Mmult_DSDinA_mult0000_Madd1_xor<25>
+    SLICE_X25Y38.F1      net (fanout=1)        1.238   unit_cpu/DSDinA_mult0000<25>
+    SLICE_X25Y38.CLK     Tfck                  0.633   unit_cpu/DSDinA<25>
+                                                       unit_cpu/DSDinA_mux0001<25>114
+                                                       unit_cpu/DSDinA_25
+    -------------------------------------------------  ---------------------------
+    Total                                     18.934ns (9.411ns logic, 9.523ns route)
+                                                       (49.7% logic, 50.3% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     1.076ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               unit_cpu/DSDoutB_13 (FF)
+  Destination:          unit_cpu/DSDinA_25 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      18.924ns (Levels of Logic = 8)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: unit_cpu/DSDoutB_13 to unit_cpu/DSDinA_25
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X20Y36.XQ      Tcko                  0.720   unit_cpu/DSDoutB<13>
+                                                       unit_cpu/DSDoutB_13
+    MULT18X18_X0Y3.A13   net (fanout=12)       3.956   unit_cpu/DSDoutB<13>
+    MULT18X18_X0Y3.P18   Tmult                 3.931   unit_cpu/Mmult_DSDinA_mult0000_submult_0
+                                                       unit_cpu/Mmult_DSDinA_mult0000_submult_0
+    SLICE_X6Y30.G1       net (fanout=1)        1.656   unit_cpu/Mmult_DSDinA_mult0000_submult_0_18
+    SLICE_X6Y30.COUT     Topcyg                1.096   unit_cpu/Mmult_DSDinA_mult0000_Madd_17
+                                                       unit_cpu/Mmult_DSDinA_mult0000_Madd_lut<3>
+                                                       unit_cpu/Mmult_DSDinA_mult0000_Madd_cy<3>
+    SLICE_X6Y31.CIN      net (fanout=1)        0.000   unit_cpu/Mmult_DSDinA_mult0000_Madd_cy<3>
+    SLICE_X6Y31.COUT     Tbyp                  0.120   unit_cpu/Mmult_DSDinA_mult0000_Madd_19
+                                                       unit_cpu/Mmult_DSDinA_mult0000_Madd_cy<4>
+                                                       unit_cpu/Mmult_DSDinA_mult0000_Madd_cy<5>
+    SLICE_X6Y32.CIN      net (fanout=1)        0.000   unit_cpu/Mmult_DSDinA_mult0000_Madd_cy<5>
+    SLICE_X6Y32.Y        Tciny                 0.923   unit_cpu/Mmult_DSDinA_mult0000_Madd_21
+                                                       unit_cpu/Mmult_DSDinA_mult0000_Madd_cy<6>
+                                                       unit_cpu/Mmult_DSDinA_mult0000_Madd_xor<7>
+    SLICE_X27Y32.G1      net (fanout=1)        2.730   unit_cpu/Mmult_DSDinA_mult0000_Madd_22
+    SLICE_X27Y32.COUT    Topcyg                0.889   unit_cpu/DSDinA_mult0000<21>
+                                                       unit_cpu/Mmult_DSDinA_mult0000_Madd1_cy<22>
+    SLICE_X27Y33.CIN     net (fanout=1)        0.000   unit_cpu/Mmult_DSDinA_mult0000_Madd1_cy<22>
+    SLICE_X27Y33.COUT    Tbyp                  0.128   unit_cpu/DSDinA_mult0000<23>
+                                                       unit_cpu/Mmult_DSDinA_mult0000_Madd1_cy<23>
+                                                       unit_cpu/Mmult_DSDinA_mult0000_Madd1_cy<24>
+    SLICE_X27Y34.CIN     net (fanout=1)        0.000   unit_cpu/Mmult_DSDinA_mult0000_Madd1_cy<24>
+    SLICE_X27Y34.X       Tcinx                 0.904   unit_cpu/DSDinA_mult0000<25>
+                                                       unit_cpu/Mmult_DSDinA_mult0000_Madd1_xor<25>
+    SLICE_X25Y38.F1      net (fanout=1)        1.238   unit_cpu/DSDinA_mult0000<25>
+    SLICE_X25Y38.CLK     Tfck                  0.633   unit_cpu/DSDinA<25>
+                                                       unit_cpu/DSDinA_mux0001<25>114
+                                                       unit_cpu/DSDinA_25
+    -------------------------------------------------  ---------------------------
+    Total                                     18.924ns (9.344ns logic, 9.580ns route)
+                                                       (49.4% logic, 50.6% route)
+
+--------------------------------------------------------------------------------
+
+Hold Paths: TS_clk = PERIOD TIMEGRP "clk" 20 ns HIGH 50%;
+--------------------------------------------------------------------------------
+
+Paths for end point unit_cpu/TempReg_27 (SLICE_X23Y40.BX), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.836ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               unit_cpu/DSDoutB_27 (FF)
+  Destination:          unit_cpu/TempReg_27 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.836ns (Levels of Logic = 0)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 20.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path: unit_cpu/DSDoutB_27 to unit_cpu/TempReg_27
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X24Y43.XQ      Tcko                  0.576   unit_cpu/DSDoutB<27>
+                                                       unit_cpu/DSDoutB_27
+    SLICE_X23Y40.BX      net (fanout=11)       0.543   unit_cpu/DSDoutB<27>
+    SLICE_X23Y40.CLK     Tckdi       (-Th)     0.283   unit_cpu/TempReg<27>
+                                                       unit_cpu/TempReg_27
+    -------------------------------------------------  ---------------------------
+    Total                                      0.836ns (0.293ns logic, 0.543ns route)
+                                                       (35.0% logic, 65.0% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point unit_cpu/TempReg_13 (SLICE_X22Y36.BX), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.842ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               unit_cpu/DSDoutB_13 (FF)
+  Destination:          unit_cpu/TempReg_13 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.842ns (Levels of Logic = 0)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 20.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path: unit_cpu/DSDoutB_13 to unit_cpu/TempReg_13
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X20Y36.XQ      Tcko                  0.576   unit_cpu/DSDoutB<13>
+                                                       unit_cpu/DSDoutB_13
+    SLICE_X22Y36.BX      net (fanout=12)       0.549   unit_cpu/DSDoutB<13>
+    SLICE_X22Y36.CLK     Tckdi       (-Th)     0.283   unit_cpu/TempReg<13>
+                                                       unit_cpu/TempReg_13
+    -------------------------------------------------  ---------------------------
+    Total                                      0.842ns (0.293ns logic, 0.549ns route)
+                                                       (34.8% logic, 65.2% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point unit_cpu/TempReg_17 (SLICE_X25Y26.BX), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.866ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               unit_cpu/DSDoutB_17 (FF)
+  Destination:          unit_cpu/TempReg_17 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.866ns (Levels of Logic = 0)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 20.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path: unit_cpu/DSDoutB_17 to unit_cpu/TempReg_17
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X24Y26.XQ      Tcko                  0.576   unit_cpu/DSDoutB<17>
+                                                       unit_cpu/DSDoutB_17
+    SLICE_X25Y26.BX      net (fanout=11)       0.573   unit_cpu/DSDoutB<17>
+    SLICE_X25Y26.CLK     Tckdi       (-Th)     0.283   unit_cpu/TempReg<17>
+                                                       unit_cpu/TempReg_17
+    -------------------------------------------------  ---------------------------
+    Total                                      0.866ns (0.293ns logic, 0.573ns route)
+                                                       (33.8% logic, 66.2% route)
+
+--------------------------------------------------------------------------------
+
+Component Switching Limit Checks: TS_clk = PERIOD TIMEGRP "clk" 20 ns HIGH 50%;
+--------------------------------------------------------------------------------
+Slack: 17.268ns (period - (min low pulse limit / (low pulse / period)))
+  Period: 20.000ns
+  Low pulse: 10.000ns
+  Low pulse limit: 1.366ns (Tbpwl)
+  Physical resource: unit_cpu/Mram_DataMemory/CLKA
+  Logical resource: unit_cpu/Mram_DataMemory.A/CLKA
+  Location pin: RAMB16_X0Y4.CLKA
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 17.268ns (period - (min high pulse limit / (high pulse / period)))
+  Period: 20.000ns
+  High pulse: 10.000ns
+  High pulse limit: 1.366ns (Tbpwh)
+  Physical resource: unit_cpu/Mram_DataMemory/CLKA
+  Logical resource: unit_cpu/Mram_DataMemory.A/CLKA
+  Location pin: RAMB16_X0Y4.CLKA
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 17.268ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 2.732ns (366.032MHz) (Tbp)
+  Physical resource: unit_cpu/Mram_DataMemory/CLKA
+  Logical resource: unit_cpu/Mram_DataMemory.A/CLKA
+  Location pin: RAMB16_X0Y4.CLKA
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+
+
+All constraints were met.
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |   19.667|         |         |         |
+---------------+---------+---------+---------+---------+
+
+
+Timing summary:
+---------------
+
+Timing errors: 0  Score: 0  (Setup/Max: 0, Hold: 0)
+
+Constraints cover 116680 paths, 0 nets, and 3081 connections
+
+Design statistics:
+   Minimum period:  19.667ns{1}   (Maximum frequency:  50.847MHz)
+
+
+------------------------------------Footnotes-----------------------------------
+1)  The minimum period statistic assumes all single cycle delays.
+
+Analysis completed Wed Aug 15 11:23:50 2012 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 93 MB
+
+
+

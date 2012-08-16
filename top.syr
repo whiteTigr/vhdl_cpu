@@ -1,0 +1,741 @@
+Release 14.1 - xst P.15xf (nt)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 20.00 secs
+Total CPU time to Xst completion: 19.58 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 20.00 secs
+Total CPU time to Xst completion: 19.61 secs
+ 
+--> Reading design: top.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "top.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "top"
+Output Format                      : NGC
+Target Device                      : xc3s400-4-tq144
+
+---- Source Options
+Top Module Name                    : top
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 8
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file "D:/XProjects/vhdl_cpu/cpu.vhd" in Library work.
+Architecture behavioral of Entity cpu is up to date.
+Compiling vhdl file "D:/XProjects/vhdl_cpu/top.vhd" in Library work.
+Architecture behavioral of Entity top is up to date.
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for entity <top> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <cpu> in library <work> (architecture <Behavioral>) with generics.
+	AddrWidth = 32
+	CodeMemoryWidth = 9
+	CodeSize = 512
+	DataMemoryWidth = 7
+	DataSize = 128
+	DataWidth = 32
+	StackSize = 16
+	StackWidth = 4
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing Entity <top> in library <work> (Architecture <behavioral>).
+Entity <top> analyzed. Unit <top> generated.
+
+Analyzing generic Entity <cpu> in library <work> (Architecture <Behavioral>).
+	AddrWidth = 32
+	CodeMemoryWidth = 9
+	CodeSize = 512
+	DataMemoryWidth = 7
+	DataSize = 128
+	DataWidth = 32
+	StackSize = 16
+	StackWidth = 4
+WARNING:Xst:790 - "D:/XProjects/vhdl_cpu/cpu.vhd" line 196: Index value(s) does not match array range, simulation mismatch.
+INFO:Xst:1607 - Contents of array <CodeMemory> may be accessed with an index that does not cover the full array size.
+WARNING:Xst:790 - "D:/XProjects/vhdl_cpu/cpu.vhd" line 198: Index value(s) does not match array range, simulation mismatch.
+INFO:Xst:1607 - Contents of array <CodeMemory> may be accessed with an index that does not cover the full array size.
+WARNING:Xst:790 - "D:/XProjects/vhdl_cpu/cpu.vhd" line 199: Index value(s) does not match array range, simulation mismatch.
+INFO:Xst:1607 - Contents of array <CodeMemory> may be accessed with an index that does not cover the full array size.
+WARNING:Xst:1610 - "D:/XProjects/vhdl_cpu/cpu.vhd" line 289: Width mismatch. <DSDinA> has a width of 32 bits but assigned expression is 4-bit wide.
+WARNING:Xst:1610 - "D:/XProjects/vhdl_cpu/cpu.vhd" line 290: Width mismatch. <DSDinA> has a width of 32 bits but assigned expression is 4-bit wide.
+WARNING:Xst:1610 - "D:/XProjects/vhdl_cpu/cpu.vhd" line 312: Width mismatch. <DataAddrA> has a width of 7 bits but assigned expression is 32-bit wide.
+WARNING:Xst:1610 - "D:/XProjects/vhdl_cpu/cpu.vhd" line 347: Width mismatch. <DSDinA> has a width of 32 bits but assigned expression is 64-bit wide.
+INFO:Xst:2679 - Register <RSAddrB> in unit <cpu> has a constant value of 0000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <CodeAddrA> in unit <cpu> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <CodeWeA> in unit <cpu> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <DataAddrB> in unit <cpu> has a constant value of 0000000 during circuit operation. The register is replaced by logic.
+Entity <cpu> analyzed. Unit <cpu> generated.
+
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <cpu>.
+    Related source file is "D:/XProjects/vhdl_cpu/cpu.vhd".
+WARNING:Xst:646 - Signal <RSDoutB> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <DataDoutB> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <CodeDoutA> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <CodeDinA> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <CodeAddrB<31:9>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <CodeAddrA<31:9>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <CmdIsLit> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Found 512x9-bit dual-port RAM <Mram_CodeMemory> for signal <CodeMemory>.
+    Found 128x32-bit single-port RAM <Mram_DataMemory> for signal <DataMemory>.
+    Found 16x32-bit single-port RAM <Mram_RetStack> for signal <RetStack>.
+    Found 16x32-bit dual-port RAM <Mram_DataStack> for signal <DataStack>.
+WARNING:Xst:643 - "D:/XProjects/vhdl_cpu/cpu.vhd" line 347: The result of a 32x32-bit multiplication is partially used. Only the 32 least significant bits are used. If you are doing this on purpose, you may safely ignore this warning. Otherwise, make sure you are not losing information, leading to unexpected circuit behavior.
+    Found 32-bit register for signal <addr>.
+    Found 1-bit register for signal <iowr>.
+    Found 32-bit register for signal <dout>.
+    Found 9-bit register for signal <CodeDoutB>.
+    Found 7-bit register for signal <DataAddrA>.
+    Found 32-bit register for signal <DataDinA>.
+    Found 32-bit register for signal <DataDoutA>.
+    Found 1-bit register for signal <DataWeA>.
+    Found 4-bit register for signal <DSAddrA>.
+    Found 4-bit addsub for signal <DSAddrA$share0000> created at line 255.
+    Found 4-bit subtractor for signal <DSAddrB$sub0000> created at line 221.
+    Found 32-bit register for signal <DSDinA>.
+    Found 32-bit addsub for signal <DSDinA$addsub0000>.
+    Found 32-bit comparator equal for signal <DSDinA$cmp_eq0019> created at line 330.
+    Found 9-bit comparator greatequal for signal <DSDinA$cmp_ge0000>.
+    Found 32-bit comparator greater for signal <DSDinA$cmp_gt0000> created at line 336.
+    Found 32-bit comparator less for signal <DSDinA$cmp_lt0000> created at line 342.
+    Found 32x32-bit multiplier for signal <DSDinA$mult0000> created at line 347.
+    Found 32-bit xor2 for signal <DSDinA$xor0000> created at line 328.
+    Found 32-bit register for signal <DSDoutA>.
+    Found 32-bit register for signal <DSDoutB>.
+    Found 1-bit register for signal <DSWeA>.
+    Found 1-bit register for signal <fetching>.
+    Found 32-bit register for signal <IP>.
+    Found 1-bit register for signal <PrevCmdIsLIT>.
+    Found 4-bit register for signal <RSAddrA>.
+    Found 4-bit addsub for signal <RSAddrA$addsub0000>.
+    Found 32-bit register for signal <RSDinA>.
+    Found 32-bit adder for signal <RSDinA$add0000> created at line 366.
+    Found 32-bit register for signal <RSDoutA>.
+    Found 1-bit register for signal <RSWeA>.
+    Found 32-bit register for signal <TempReg>.
+    Summary:
+	inferred   4 RAM(s).
+	inferred 382 D-type flip-flop(s).
+	inferred   5 Adder/Subtractor(s).
+	inferred   1 Multiplier(s).
+	inferred   4 Comparator(s).
+Unit <cpu> synthesized.
+
+
+Synthesizing Unit <top>.
+    Related source file is "D:/XProjects/vhdl_cpu/top.vhd".
+WARNING:Xst:647 - Input <d> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:646 - Signal <BusDout<31:1>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:653 - Signal <BusDin> is used but never assigned. This sourceless signal will be automatically connected to value 00000000000000000000000000000000.
+    Found 1-bit register for signal <q>.
+    Summary:
+	inferred   1 D-type flip-flop(s).
+Unit <top> synthesized.
+
+INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 4
+ 128x32-bit single-port RAM                            : 1
+ 16x32-bit dual-port RAM                               : 1
+ 16x32-bit single-port RAM                             : 1
+ 512x9-bit dual-port RAM                               : 1
+# Multipliers                                          : 1
+ 32x32-bit multiplier                                  : 1
+# Adders/Subtractors                                   : 5
+ 32-bit adder                                          : 1
+ 32-bit addsub                                         : 1
+ 4-bit addsub                                          : 2
+ 4-bit subtractor                                      : 1
+# Registers                                            : 22
+ 1-bit register                                        : 7
+ 32-bit register                                       : 11
+ 4-bit register                                        : 2
+ 7-bit register                                        : 1
+ 9-bit register                                        : 1
+# Comparators                                          : 4
+ 32-bit comparator equal                               : 1
+ 32-bit comparator greater                             : 1
+ 32-bit comparator less                                : 1
+ 9-bit comparator greatequal                           : 1
+# Xors                                                 : 1
+ 32-bit xor2                                           : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+WARNING:Xst:2677 - Node <dout_1> of sequential type is unconnected in block <unit_cpu>.
+WARNING:Xst:2677 - Node <dout_2> of sequential type is unconnected in block <unit_cpu>.
+WARNING:Xst:2677 - Node <dout_3> of sequential type is unconnected in block <unit_cpu>.
+WARNING:Xst:2677 - Node <dout_4> of sequential type is unconnected in block <unit_cpu>.
+WARNING:Xst:2677 - Node <dout_5> of sequential type is unconnected in block <unit_cpu>.
+WARNING:Xst:2677 - Node <dout_6> of sequential type is unconnected in block <unit_cpu>.
+WARNING:Xst:2677 - Node <dout_7> of sequential type is unconnected in block <unit_cpu>.
+WARNING:Xst:2677 - Node <dout_8> of sequential type is unconnected in block <unit_cpu>.
+WARNING:Xst:2677 - Node <dout_9> of sequential type is unconnected in block <unit_cpu>.
+WARNING:Xst:2677 - Node <dout_10> of sequential type is unconnected in block <unit_cpu>.
+WARNING:Xst:2677 - Node <dout_11> of sequential type is unconnected in block <unit_cpu>.
+WARNING:Xst:2677 - Node <dout_12> of sequential type is unconnected in block <unit_cpu>.
+WARNING:Xst:2677 - Node <dout_13> of sequential type is unconnected in block <unit_cpu>.
+WARNING:Xst:2677 - Node <dout_14> of sequential type is unconnected in block <unit_cpu>.
+WARNING:Xst:2677 - Node <dout_15> of sequential type is unconnected in block <unit_cpu>.
+WARNING:Xst:2677 - Node <dout_16> of sequential type is unconnected in block <unit_cpu>.
+WARNING:Xst:2677 - Node <dout_17> of sequential type is unconnected in block <unit_cpu>.
+WARNING:Xst:2677 - Node <dout_18> of sequential type is unconnected in block <unit_cpu>.
+WARNING:Xst:2677 - Node <dout_19> of sequential type is unconnected in block <unit_cpu>.
+WARNING:Xst:2677 - Node <dout_20> of sequential type is unconnected in block <unit_cpu>.
+WARNING:Xst:2677 - Node <dout_21> of sequential type is unconnected in block <unit_cpu>.
+WARNING:Xst:2677 - Node <dout_22> of sequential type is unconnected in block <unit_cpu>.
+WARNING:Xst:2677 - Node <dout_23> of sequential type is unconnected in block <unit_cpu>.
+WARNING:Xst:2677 - Node <dout_24> of sequential type is unconnected in block <unit_cpu>.
+WARNING:Xst:2677 - Node <dout_25> of sequential type is unconnected in block <unit_cpu>.
+WARNING:Xst:2677 - Node <dout_26> of sequential type is unconnected in block <unit_cpu>.
+WARNING:Xst:2677 - Node <dout_27> of sequential type is unconnected in block <unit_cpu>.
+WARNING:Xst:2677 - Node <dout_28> of sequential type is unconnected in block <unit_cpu>.
+WARNING:Xst:2677 - Node <dout_29> of sequential type is unconnected in block <unit_cpu>.
+WARNING:Xst:2677 - Node <dout_30> of sequential type is unconnected in block <unit_cpu>.
+WARNING:Xst:2677 - Node <dout_31> of sequential type is unconnected in block <unit_cpu>.
+
+Synthesizing (advanced) Unit <cpu>.
+INFO:Xst:3226 - The RAM <Mram_DataMemory> will be implemented as a BLOCK RAM, absorbing the following register(s): <DataDoutA>
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 128-word x 32-bit                   |          |
+    |     mode           | read-first                          |          |
+    |     clkA           | connected to signal <clk>           | rise     |
+    |     weA            | connected to signal <DataWeA>       | high     |
+    |     addrA          | connected to signal <DataAddrA>     |          |
+    |     diA            | connected to signal <DataDinA>      |          |
+    |     doA            | connected to signal <DataDoutA>     |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3231 - The small RAM <Mram_RetStack> will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 16-word x 32-bit                    |          |
+    |     clkA           | connected to signal <clk>           | rise     |
+    |     weA            | connected to signal <RSWeA>         | high     |
+    |     addrA          | connected to signal <RSAddrA>       |          |
+    |     diA            | connected to signal <RSDinA>        |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3231 - The small RAM <Mram_DataStack> will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 16-word x 32-bit                    |          |
+    |     clkA           | connected to signal <clk>           | rise     |
+    |     weA            | connected to signal <DSWeA>         | high     |
+    |     addrA          | connected to signal <DSAddrA>       |          |
+    |     diA            | connected to signal <DSDinA>        |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+    | Port B                                                              |
+    |     aspect ratio   | 16-word x 32-bit                    |          |
+    |     addrB          | connected to signal <DSAddrB>       |          |
+    |     doB            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3038 - The RAM <Mram_CodeMemory> appears to be read-only. If that was not your intent please check the write enable description.
+INFO:Xst:3226 - The RAM <Mram_CodeMemory> will be implemented as a BLOCK RAM, absorbing the following register(s): <CodeDoutB>
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 512-word x 9-bit                    |          |
+    |     mode           | write-first                         |          |
+    |     clkA           | connected to signal <clk>           | rise     |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <GND>           |          |
+    |     diA            | connected to signal <GND>           |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+    | Port B                                                              |
+    |     aspect ratio   | 512-word x 9-bit                    |          |
+    |     mode           | write-first                         |          |
+    |     clkB           | connected to signal <clk>           | rise     |
+    |     addrB          | connected to signal <IP>            |          |
+    |     doB            | connected to signal <CodeDoutB>     |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+Unit <cpu> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 4
+ 128x32-bit single-port block RAM                      : 1
+ 16x32-bit dual-port distributed RAM                   : 1
+ 16x32-bit single-port distributed RAM                 : 1
+ 512x9-bit dual-port block RAM                         : 1
+# Multipliers                                          : 1
+ 32x32-bit multiplier                                  : 1
+# Adders/Subtractors                                   : 5
+ 32-bit adder                                          : 1
+ 32-bit addsub                                         : 1
+ 4-bit addsub                                          : 2
+ 4-bit subtractor                                      : 1
+# Registers                                            : 342
+ Flip-Flops                                            : 342
+# Comparators                                          : 4
+ 32-bit comparator equal                               : 1
+ 32-bit comparator greater                             : 1
+ 32-bit comparator less                                : 1
+ 9-bit comparator greatequal                           : 1
+# Xors                                                 : 1
+ 32-bit xor2                                           : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:2677 - Node <RSDoutA_9> of sequential type is unconnected in block <cpu>.
+WARNING:Xst:2677 - Node <RSDoutA_10> of sequential type is unconnected in block <cpu>.
+WARNING:Xst:2677 - Node <RSDoutA_11> of sequential type is unconnected in block <cpu>.
+WARNING:Xst:2677 - Node <RSDoutA_12> of sequential type is unconnected in block <cpu>.
+WARNING:Xst:2677 - Node <RSDoutA_13> of sequential type is unconnected in block <cpu>.
+WARNING:Xst:2677 - Node <RSDoutA_14> of sequential type is unconnected in block <cpu>.
+WARNING:Xst:2677 - Node <RSDoutA_15> of sequential type is unconnected in block <cpu>.
+WARNING:Xst:2677 - Node <RSDoutA_16> of sequential type is unconnected in block <cpu>.
+WARNING:Xst:2677 - Node <RSDoutA_17> of sequential type is unconnected in block <cpu>.
+WARNING:Xst:2677 - Node <RSDoutA_18> of sequential type is unconnected in block <cpu>.
+WARNING:Xst:2677 - Node <RSDoutA_19> of sequential type is unconnected in block <cpu>.
+WARNING:Xst:2677 - Node <RSDoutA_20> of sequential type is unconnected in block <cpu>.
+WARNING:Xst:2677 - Node <RSDoutA_21> of sequential type is unconnected in block <cpu>.
+WARNING:Xst:2677 - Node <RSDoutA_22> of sequential type is unconnected in block <cpu>.
+WARNING:Xst:2677 - Node <RSDoutA_23> of sequential type is unconnected in block <cpu>.
+WARNING:Xst:2677 - Node <RSDoutA_24> of sequential type is unconnected in block <cpu>.
+WARNING:Xst:2677 - Node <RSDoutA_25> of sequential type is unconnected in block <cpu>.
+WARNING:Xst:2677 - Node <RSDoutA_26> of sequential type is unconnected in block <cpu>.
+WARNING:Xst:2677 - Node <RSDoutA_27> of sequential type is unconnected in block <cpu>.
+WARNING:Xst:2677 - Node <RSDoutA_28> of sequential type is unconnected in block <cpu>.
+WARNING:Xst:2677 - Node <RSDoutA_29> of sequential type is unconnected in block <cpu>.
+WARNING:Xst:2677 - Node <RSDoutA_30> of sequential type is unconnected in block <cpu>.
+WARNING:Xst:2677 - Node <RSDoutA_31> of sequential type is unconnected in block <cpu>.
+WARNING:Xst:2677 - Node <IP_9> of sequential type is unconnected in block <cpu>.
+WARNING:Xst:2677 - Node <IP_10> of sequential type is unconnected in block <cpu>.
+WARNING:Xst:2677 - Node <IP_11> of sequential type is unconnected in block <cpu>.
+WARNING:Xst:2677 - Node <IP_12> of sequential type is unconnected in block <cpu>.
+WARNING:Xst:2677 - Node <IP_13> of sequential type is unconnected in block <cpu>.
+WARNING:Xst:2677 - Node <IP_14> of sequential type is unconnected in block <cpu>.
+WARNING:Xst:2677 - Node <IP_15> of sequential type is unconnected in block <cpu>.
+WARNING:Xst:2677 - Node <IP_16> of sequential type is unconnected in block <cpu>.
+WARNING:Xst:2677 - Node <IP_17> of sequential type is unconnected in block <cpu>.
+WARNING:Xst:2677 - Node <IP_18> of sequential type is unconnected in block <cpu>.
+WARNING:Xst:2677 - Node <IP_19> of sequential type is unconnected in block <cpu>.
+WARNING:Xst:2677 - Node <IP_20> of sequential type is unconnected in block <cpu>.
+WARNING:Xst:2677 - Node <IP_21> of sequential type is unconnected in block <cpu>.
+WARNING:Xst:2677 - Node <IP_22> of sequential type is unconnected in block <cpu>.
+WARNING:Xst:2677 - Node <IP_23> of sequential type is unconnected in block <cpu>.
+WARNING:Xst:2677 - Node <IP_24> of sequential type is unconnected in block <cpu>.
+WARNING:Xst:2677 - Node <IP_25> of sequential type is unconnected in block <cpu>.
+WARNING:Xst:2677 - Node <IP_26> of sequential type is unconnected in block <cpu>.
+WARNING:Xst:2677 - Node <IP_27> of sequential type is unconnected in block <cpu>.
+WARNING:Xst:2677 - Node <IP_28> of sequential type is unconnected in block <cpu>.
+WARNING:Xst:2677 - Node <IP_29> of sequential type is unconnected in block <cpu>.
+WARNING:Xst:2677 - Node <IP_30> of sequential type is unconnected in block <cpu>.
+WARNING:Xst:2677 - Node <IP_31> of sequential type is unconnected in block <cpu>.
+WARNING:Xst:2677 - Node <RSDinA_9> of sequential type is unconnected in block <cpu>.
+WARNING:Xst:2677 - Node <RSDinA_10> of sequential type is unconnected in block <cpu>.
+WARNING:Xst:2677 - Node <RSDinA_11> of sequential type is unconnected in block <cpu>.
+WARNING:Xst:2677 - Node <RSDinA_12> of sequential type is unconnected in block <cpu>.
+WARNING:Xst:2677 - Node <RSDinA_13> of sequential type is unconnected in block <cpu>.
+WARNING:Xst:2677 - Node <RSDinA_14> of sequential type is unconnected in block <cpu>.
+WARNING:Xst:2677 - Node <RSDinA_15> of sequential type is unconnected in block <cpu>.
+WARNING:Xst:2677 - Node <RSDinA_16> of sequential type is unconnected in block <cpu>.
+WARNING:Xst:2677 - Node <RSDinA_17> of sequential type is unconnected in block <cpu>.
+WARNING:Xst:2677 - Node <RSDinA_18> of sequential type is unconnected in block <cpu>.
+WARNING:Xst:2677 - Node <RSDinA_19> of sequential type is unconnected in block <cpu>.
+WARNING:Xst:2677 - Node <RSDinA_20> of sequential type is unconnected in block <cpu>.
+WARNING:Xst:2677 - Node <RSDinA_21> of sequential type is unconnected in block <cpu>.
+WARNING:Xst:2677 - Node <RSDinA_22> of sequential type is unconnected in block <cpu>.
+WARNING:Xst:2677 - Node <RSDinA_23> of sequential type is unconnected in block <cpu>.
+WARNING:Xst:2677 - Node <RSDinA_24> of sequential type is unconnected in block <cpu>.
+WARNING:Xst:2677 - Node <RSDinA_25> of sequential type is unconnected in block <cpu>.
+WARNING:Xst:2677 - Node <RSDinA_26> of sequential type is unconnected in block <cpu>.
+WARNING:Xst:2677 - Node <RSDinA_27> of sequential type is unconnected in block <cpu>.
+WARNING:Xst:2677 - Node <RSDinA_28> of sequential type is unconnected in block <cpu>.
+WARNING:Xst:2677 - Node <RSDinA_29> of sequential type is unconnected in block <cpu>.
+WARNING:Xst:2677 - Node <RSDinA_30> of sequential type is unconnected in block <cpu>.
+WARNING:Xst:2677 - Node <RSDinA_31> of sequential type is unconnected in block <cpu>.
+WARNING:Xst:2677 - Node <Mram_RetStack10> of sequential type is unconnected in block <cpu>.
+WARNING:Xst:2677 - Node <Mram_RetStack13> of sequential type is unconnected in block <cpu>.
+WARNING:Xst:2677 - Node <Mram_RetStack11> of sequential type is unconnected in block <cpu>.
+WARNING:Xst:2677 - Node <Mram_RetStack12> of sequential type is unconnected in block <cpu>.
+WARNING:Xst:2677 - Node <Mram_RetStack14> of sequential type is unconnected in block <cpu>.
+WARNING:Xst:2677 - Node <Mram_RetStack15> of sequential type is unconnected in block <cpu>.
+WARNING:Xst:2677 - Node <Mram_RetStack18> of sequential type is unconnected in block <cpu>.
+WARNING:Xst:2677 - Node <Mram_RetStack16> of sequential type is unconnected in block <cpu>.
+WARNING:Xst:2677 - Node <Mram_RetStack17> of sequential type is unconnected in block <cpu>.
+WARNING:Xst:2677 - Node <Mram_RetStack19> of sequential type is unconnected in block <cpu>.
+WARNING:Xst:2677 - Node <Mram_RetStack20> of sequential type is unconnected in block <cpu>.
+WARNING:Xst:2677 - Node <Mram_RetStack23> of sequential type is unconnected in block <cpu>.
+WARNING:Xst:2677 - Node <Mram_RetStack21> of sequential type is unconnected in block <cpu>.
+WARNING:Xst:2677 - Node <Mram_RetStack22> of sequential type is unconnected in block <cpu>.
+WARNING:Xst:2677 - Node <Mram_RetStack24> of sequential type is unconnected in block <cpu>.
+WARNING:Xst:2677 - Node <Mram_RetStack25> of sequential type is unconnected in block <cpu>.
+WARNING:Xst:2677 - Node <Mram_RetStack28> of sequential type is unconnected in block <cpu>.
+WARNING:Xst:2677 - Node <Mram_RetStack26> of sequential type is unconnected in block <cpu>.
+WARNING:Xst:2677 - Node <Mram_RetStack27> of sequential type is unconnected in block <cpu>.
+WARNING:Xst:2677 - Node <Mram_RetStack29> of sequential type is unconnected in block <cpu>.
+WARNING:Xst:2677 - Node <Mram_RetStack30> of sequential type is unconnected in block <cpu>.
+WARNING:Xst:2677 - Node <Mram_RetStack31> of sequential type is unconnected in block <cpu>.
+WARNING:Xst:2677 - Node <Mram_RetStack32> of sequential type is unconnected in block <cpu>.
+
+Optimizing unit <top> ...
+
+Optimizing unit <cpu> ...
+WARNING:Xst:2677 - Node <unit_cpu/dout_31> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <unit_cpu/dout_30> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <unit_cpu/dout_29> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <unit_cpu/dout_28> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <unit_cpu/dout_27> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <unit_cpu/dout_26> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <unit_cpu/dout_25> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <unit_cpu/dout_24> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <unit_cpu/dout_23> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <unit_cpu/dout_22> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <unit_cpu/dout_21> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <unit_cpu/dout_20> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <unit_cpu/dout_19> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <unit_cpu/dout_18> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <unit_cpu/dout_17> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <unit_cpu/dout_16> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <unit_cpu/dout_15> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <unit_cpu/dout_14> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <unit_cpu/dout_13> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <unit_cpu/dout_12> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <unit_cpu/dout_11> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <unit_cpu/dout_10> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <unit_cpu/dout_9> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <unit_cpu/dout_8> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <unit_cpu/dout_7> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <unit_cpu/dout_6> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <unit_cpu/dout_5> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <unit_cpu/dout_4> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <unit_cpu/dout_3> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <unit_cpu/dout_2> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <unit_cpu/dout_1> of sequential type is unconnected in block <top>.
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block top, actual ratio is 11.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 242
+ Flip-Flops                                            : 242
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : top.ngr
+Top Level Output File Name         : top
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 4
+
+Cell Usage :
+# BELS                             : 872
+#      GND                         : 3
+#      INV                         : 5
+#      LUT1                        : 8
+#      LUT2                        : 107
+#      LUT3                        : 131
+#      LUT3_D                      : 1
+#      LUT4                        : 336
+#      LUT4_D                      : 1
+#      LUT4_L                      : 33
+#      MUXCY                       : 164
+#      MUXF5                       : 11
+#      VCC                         : 1
+#      XORCY                       : 71
+# FlipFlops/Latches                : 242
+#      FD                          : 73
+#      FDE                         : 142
+#      FDRE                        : 26
+#      FDS                         : 1
+# RAMS                             : 43
+#      RAM16X1D                    : 32
+#      RAM16X1S                    : 9
+#      RAMB16                      : 2
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 2
+#      IBUF                        : 1
+#      OBUF                        : 1
+# MULTs                            : 3
+#      MULT18X18                   : 3
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s400tq144-4 
+
+ Number of Slices:                      387  out of   3584    10%  
+ Number of Slice Flip Flops:            242  out of   7168     3%  
+ Number of 4 input LUTs:                695  out of   7168     9%  
+    Number used as logic:               622
+    Number used as RAMs:                 73
+ Number of IOs:                           4
+ Number of bonded IOBs:                   3  out of     97     3%  
+ Number of BRAMs:                         2  out of     16    12%  
+ Number of MULT18X18s:                    3  out of     16    18%  
+ Number of GCLKs:                         1  out of      8    12%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 285   |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -4
+
+   Minimum period: 14.100ns (Maximum Frequency: 70.922MHz)
+   Minimum input arrival time before clock: 6.031ns
+   Maximum output required time after clock: 7.165ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 14.100ns (frequency: 70.922MHz)
+  Total number of paths / destination ports: 102637 / 828
+-------------------------------------------------------------------------
+Delay:               14.100ns (Levels of Logic = 8)
+  Source:            unit_cpu/DSDoutA_6 (FF)
+  Destination:       unit_cpu/DSDinA_31 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: unit_cpu/DSDoutA_6 to unit_cpu/DSDinA_31
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q              15   0.720   1.188  unit_cpu/DSDoutA_6 (unit_cpu/DSDoutA_6)
+     MULT18X18:B6->P29     1   4.709   0.996  unit_cpu/Mmult_DSDinA_mult0000_submult_0 (unit_cpu/Mmult_DSDinA_mult0000_submult_0_29)
+     LUT2:I1->O            1   0.551   0.000  unit_cpu/Mmult_DSDinA_mult0000_Madd_lut<14> (unit_cpu/Mmult_DSDinA_mult0000_Madd_lut<14>)
+     MUXCY:S->O            1   0.500   0.000  unit_cpu/Mmult_DSDinA_mult0000_Madd_cy<14> (unit_cpu/Mmult_DSDinA_mult0000_Madd_cy<14>)
+     XORCY:CI->O           1   0.904   0.996  unit_cpu/Mmult_DSDinA_mult0000_Madd_xor<15> (unit_cpu/Mmult_DSDinA_mult0000_Madd_30)
+     LUT2:I1->O            1   0.551   0.000  unit_cpu/Mmult_DSDinA_mult0000_Madd1_lut<30> (unit_cpu/Mmult_DSDinA_mult0000_Madd1_lut<30>)
+     MUXCY:S->O            0   0.500   0.000  unit_cpu/Mmult_DSDinA_mult0000_Madd1_cy<30> (unit_cpu/Mmult_DSDinA_mult0000_Madd1_cy<30>)
+     XORCY:CI->O           1   0.904   0.827  unit_cpu/Mmult_DSDinA_mult0000_Madd1_xor<31> (unit_cpu/DSDinA_mult0000<31>)
+     LUT4:I3->O            1   0.551   0.000  unit_cpu/DSDinA_mux0001<31>121 (unit_cpu/DSDinA_mux0001<31>)
+     FDE:D                     0.203          unit_cpu/DSDinA_31
+    ----------------------------------------
+    Total                     14.100ns (10.093ns logic, 4.007ns route)
+                                       (71.6% logic, 28.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 168 / 168
+-------------------------------------------------------------------------
+Offset:              6.031ns (Levels of Logic = 2)
+  Source:            CpuReset (PAD)
+  Destination:       unit_cpu/PrevCmdIsLIT (FF)
+  Destination Clock: clk rising
+
+  Data Path: CpuReset to unit_cpu/PrevCmdIsLIT
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            33   0.821   2.198  CpuReset_IBUF (CpuReset_IBUF)
+     LUT2:I0->O           33   0.551   1.859  unit_cpu/DataWeA_or0000_inv1 (unit_cpu/DataWeA_or0000_inv)
+     FDE:CE                    0.602          unit_cpu/DSDinA_0
+    ----------------------------------------
+    Total                      6.031ns (1.974ns logic, 4.057ns route)
+                                       (32.7% logic, 67.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              7.165ns (Levels of Logic = 1)
+  Source:            q (FF)
+  Destination:       q (PAD)
+  Source Clock:      clk rising
+
+  Data Path: q to q
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q              1   0.720   0.801  q (q_OBUF)
+     OBUF:I->O                 5.644          q_OBUF (q)
+    ----------------------------------------
+    Total                      7.165ns (6.364ns logic, 0.801ns route)
+                                       (88.8% logic, 11.2% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 52.00 secs
+Total CPU time to Xst completion: 51.30 secs
+ 
+--> 
+
+Total memory usage is 156912 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :  172 (   0 filtered)
+Number of infos    :   13 (   0 filtered)
+

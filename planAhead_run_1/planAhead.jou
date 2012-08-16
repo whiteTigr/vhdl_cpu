@@ -1,0 +1,21 @@
+#-----------------------------------------------------------
+# PlanAhead v14.1
+# Build 179419 by xbuild on Thu Apr 26 11:41:35 MDT 2012
+# Start of session at: Wed Aug 15 10:44:46 2012
+# Process ID: 1068
+# Log file: D:/XProjects/vhdl_cpu/planAhead_run_1/planAhead.log
+# Journal file: D:/XProjects/vhdl_cpu/planAhead_run_1/planAhead.jou
+#-----------------------------------------------------------
+start_gui
+source D:/XProjects/vhdl_cpu/pa.fromNcd.tcl
+get_clocks -match_style ucf *
+get_clocks -match_style ucf *clk
+get_clocks -match_style ucf *clk*
+get_path_groups *
+create_slack_histogram -delay_type max -num_bins 10 -significant_digits 3 -results "timing_1"
+get_pins -hierarchical -match_style ucf *
+report_timing -to {unit_cpu/DSDinA_30/D} -max_paths 10 -sort_by group -input_pins -nets -name {timing_2}
+report_timing -to {unit_cpu/DSDinA_30/D unit_cpu/DSDinA_31/D unit_cpu/DSDinA_29/D unit_cpu/DSDinA_28/D unit_cpu/DSDinA_27/D unit_cpu/DSDinA_22/D unit_cpu/DSDinA_20/D unit_cpu/DSDinA_21/D unit_cpu/DSDinA_23/D unit_cpu/DSDinA_24/D unit_cpu/DSDinA_26/D unit_cpu/DSDinA_25/D unit_cpu/DSDinA_18/D unit_cpu/DSDinA_19/D unit_cpu/DSDinA_8/D unit_cpu/DSDinA_9/D unit_cpu/DSDinA_10/D unit_cpu/DSDinA_11/D unit_cpu/DSDinA_12/D unit_cpu/DSDinA_13/D unit_cpu/DSDinA_14/D unit_cpu/DSDinA_15/D unit_cpu/DSDinA_16/D unit_cpu/DSDinA_17/D unit_cpu/DSDinA_1/D unit_cpu/DSDinA_2/D unit_cpu/DSDinA_4/D unit_cpu/DSDinA_5/D unit_cpu/DSDinA_6/D unit_cpu/DSDinA_7/D unit_cpu/DSDinA_3/D unit_cpu/DSDinA_0/D} -max_paths 10 -sort_by group -input_pins -nets -name {timing_3}
+report_timing -to {unit_cpu/IP_0/D unit_cpu/IP_1/D unit_cpu/IP_2/D unit_cpu/IP_3/D unit_cpu/IP_4/D unit_cpu/IP_5/D unit_cpu/IP_6/D unit_cpu/IP_7/D unit_cpu/IP_8/D} -max_paths 10 -sort_by group -input_pins -nets -name {timing_4}
+report_timing -to {unit_cpu/DSDinA_30/D unit_cpu/DSDinA_31/D unit_cpu/DSDinA_29/D unit_cpu/DSDinA_28/D} -max_paths 10 -sort_by group -input_pins -nets -name {timing_5}
+exit
