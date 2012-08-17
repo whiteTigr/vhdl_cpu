@@ -1,0 +1,4 @@
+select figure at 317 577 8 -branches -sn=1
+add instance dcm 592 1520 R0 -sn=1
+add autowire 592 560 208 560 8 -sn=1
+add iomarker 208 560 0 Unknown Unknown -sn=1

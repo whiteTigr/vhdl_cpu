@@ -5,7 +5,7 @@ run
 -ifmt mixed
 -ofn top
 -ofmt NGC
--p xc3s400-4-tq144
+-p xc3s500e-4-fg320
 -top top
 -opt_mode Speed
 -opt_level 1
@@ -43,7 +43,7 @@ run
 -mult_style Auto
 -iobuf YES
 -max_fanout 100000
--bufg 8
+-bufg 24
 -register_duplication YES
 -register_balancing No
 -slice_packing YES

@@ -6,7 +6,7 @@
 	<DefaultLaunch Dir="$PRUNDIR"/>
 	<DefaultPromote Dir="$PROMOTEDIR"/>
 	<Config>
-		<Option Name="Id" Val="64ca9b4c5ee048469ac6cd418d94e7e8"/>
+		<Option Name="Id" Val="cb7467c5b6ff4ad6a3d59de36d8afb10"/>
 		<Option Name="Part" Val="xc3s400tq144-4"/>
 		<Option Name="TargetLanguage" Val="Verilog"/>
 		<Option Name="TargetSimulator" Val="ISim"/>

@@ -1,10 +1,21 @@
-V3 7
-FL D:/XProjects/vhdl_cpu/cpu.vhd 2012/08/15.09:48:39 P.15xf
-EN work/cpu 1345015340 FL D:/XProjects/vhdl_cpu/cpu.vhd PB ieee/std_logic_1164 1335251622 \
+V3 19
+FL D:/XProjects/vhdl_cpu/clk_dcm.vhf 2012/08/17.15:25:05 P.15xf
+EN work/clk_dcm 1345203562 FL D:/XProjects/vhdl_cpu/clk_dcm.vhf \
+      PB ieee/std_logic_1164 1335251622 PB ieee/NUMERIC_STD 1335251627 LB UNISIM \
+      PH unisim/VCOMPONENTS 1335251629
+AR work/clk_dcm/BEHAVIORAL 1345203563 \
+      FL D:/XProjects/vhdl_cpu/clk_dcm.vhf EN work/clk_dcm 1345203562 CP DCM \
+      CP BUFG CP GND
+FL D:/XProjects/vhdl_cpu/cpu.vhd 2012/08/17.15:39:13 P.15xf
+EN work/cpu 1345203564 FL D:/XProjects/vhdl_cpu/cpu.vhd PB ieee/std_logic_1164 1335251622 \
       PB ieee/std_logic_arith 1335251623 PB ieee/STD_LOGIC_UNSIGNED 1335251625
-AR work/cpu/Behavioral 1345015341 \
-      FL D:/XProjects/vhdl_cpu/cpu.vhd EN work/cpu 1345015340
-FL D:/XProjects/vhdl_cpu/top.vhd 2012/08/15.10:20:21 P.15xf
-EN work/top 1345015342 FL D:/XProjects/vhdl_cpu/top.vhd PB ieee/std_logic_1164 1335251622
-AR work/top/Behavioral 1345015343 \
-      FL D:/XProjects/vhdl_cpu/top.vhd EN work/top 1345015342 CP cpu
+AR work/cpu/Behavioral 1345203565 \
+      FL D:/XProjects/vhdl_cpu/cpu.vhd EN work/cpu 1345203564 CP uart
+FL D:/XProjects/vhdl_cpu/top.vhd 2012/08/17.15:38:36 P.15xf
+EN work/top 1345203566 FL D:/XProjects/vhdl_cpu/top.vhd PB ieee/std_logic_1164 1335251622
+AR work/top/Behavioral 1345203567 \
+      FL D:/XProjects/vhdl_cpu/top.vhd EN work/top 1345203566 CP clk_dcm CP cpu
+FL D:/XProjects/vhdl_cpu/uart.vhd 2012/08/17.15:16:01 P.15xf
+EN work/uart 1345203560 FL D:/XProjects/vhdl_cpu/uart.vhd PB ieee/std_logic_1164 1335251622
+AR work/uart/Behavioral 1345203561 \
+      FL D:/XProjects/vhdl_cpu/uart.vhd EN work/uart 1345203560

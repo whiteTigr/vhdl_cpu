@@ -1,2 +1,4 @@
+vhdl work "D:\XProjects\vhdl_cpu\uart.vhd"
 vhdl work "D:\XProjects\vhdl_cpu\cpu.vhd"
+vhdl work "D:\XProjects\vhdl_cpu\clk_dcm.vhf"
 vhdl work "D:\XProjects\vhdl_cpu\top.vhd"

@@ -2,17 +2,27 @@ Release 14.1 ngdbuild P.15xf (nt)
 Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
 
 Command Line: D:\Xilinx\14.1\ISE_DS\ISE\bin\nt\unwrapped\ngdbuild.exe -intstyle
-ise -dd _ngo -nt timestamp -uc top.ucf -p xc3s400-tq144-4 top.ngc top.ngd
+ise -dd _ngo -nt timestamp -uc cpu.ucf -uc top.ucf -p xc3s500e-fg320-4 top.ngc
+top.ngd
 
 Reading NGO file "D:/XProjects/vhdl_cpu/top.ngc" ...
 Gathering constraint information from source properties...
 Done.
 
+Annotating constraints to design from ucf file "cpu.ucf" ...
 Annotating constraints to design from ucf file "top.ucf" ...
 Resolving constraint associations...
 Checking Constraint Associations...
+INFO:ConstraintSystem:178 - TNM 'clk_in', used in period specification 'TS_clk',
+   was traced into DCM_SP instance unit_dcm/XLXI_1. The following new TNM groups
+   and period specifications were generated at the DCM_SP output(s): 
+   CLK0: <TIMESPEC TS_clk1 = PERIOD "clk1" TS_clk HIGH 50%>
+
 Done...
 
+INFO:NgdBuild:1222 - Setting CLKIN_PERIOD attribute associated with DCM instance
+   unit_dcm/XLXI_1 to 12.500000 ns based on the period specification (<TIMESPEC
+   TS_clk = PERIOD "clk_in" 12.5 ns HIGH 50 %;> [top.ucf(3)]).
 Checking expanded design ...
 
 Partition Implementation Status
@@ -29,7 +39,7 @@ NGDBUILD Design Results Summary:
 Total memory usage is 92108 kilobytes
 
 Writing NGD file "top.ngd" ...
-Total REAL time to NGDBUILD completion:  7 sec
-Total CPU time to NGDBUILD completion:   5 sec
+Total REAL time to NGDBUILD completion:  8 sec
+Total CPU time to NGDBUILD completion:   6 sec
 
 Writing NGDBUILD log file "top.bld"...

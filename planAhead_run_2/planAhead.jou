@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# PlanAhead v14.1
+# Build 179419 by xbuild on Thu Apr 26 11:41:35 MDT 2012
+# Start of session at: Fri Aug 17 15:46:43 2012
+# Process ID: 740
+# Log file: D:/XProjects/vhdl_cpu/planAhead_run_2/planAhead.log
+# Journal file: D:/XProjects/vhdl_cpu/planAhead_run_2/planAhead.jou
+#-----------------------------------------------------------
+start_gui
+source D:/XProjects/vhdl_cpu/pa.fromNcd.tcl
+create_slack_histogram -delay_type max -num_bins 10 -significant_digits 3 -results "timing_1"
+exit

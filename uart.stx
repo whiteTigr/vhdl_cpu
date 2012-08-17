@@ -1,0 +1,55 @@
+Release 14.1 - xst P.15xf (nt)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to D:/XProjects/vhdl_cpu/xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.22 secs
+ 
+--> Parameter xsthdpdir set to D:/XProjects/vhdl_cpu/xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.22 secs
+ 
+--> WARNING:Xst:3164 - Option "-debug" found multiple times in the command line. Only the first occurence is considered.
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file "D:/XProjects/vhdl_cpu/uart.vhd" in Library work.
+Entity <uart> compiled.
+WARNING:HDLParsers:817 - "D:/XProjects/vhdl_cpu/uart.vhd" Line 66. Choice .to. is not a locally static expression.
+WARNING:HDLParsers:817 - "D:/XProjects/vhdl_cpu/uart.vhd" Line 67. Choice / is not a locally static expression.
+WARNING:HDLParsers:817 - "D:/XProjects/vhdl_cpu/uart.vhd" Line 68. Choice / is not a locally static expression.
+WARNING:HDLParsers:817 - "D:/XProjects/vhdl_cpu/uart.vhd" Line 69. Choice / is not a locally static expression.
+WARNING:HDLParsers:817 - "D:/XProjects/vhdl_cpu/uart.vhd" Line 70. Choice / is not a locally static expression.
+WARNING:HDLParsers:817 - "D:/XProjects/vhdl_cpu/uart.vhd" Line 71. Choice / is not a locally static expression.
+WARNING:HDLParsers:817 - "D:/XProjects/vhdl_cpu/uart.vhd" Line 72. Choice / is not a locally static expression.
+WARNING:HDLParsers:817 - "D:/XProjects/vhdl_cpu/uart.vhd" Line 73. Choice / is not a locally static expression.
+WARNING:HDLParsers:817 - "D:/XProjects/vhdl_cpu/uart.vhd" Line 74. Choice / is not a locally static expression.
+WARNING:HDLParsers:817 - "D:/XProjects/vhdl_cpu/uart.vhd" Line 75. Choice / is not a locally static expression.
+WARNING:HDLParsers:817 - "D:/XProjects/vhdl_cpu/uart.vhd" Line 93. Choice * is not a locally static expression.
+WARNING:HDLParsers:817 - "D:/XProjects/vhdl_cpu/uart.vhd" Line 94. Choice * is not a locally static expression.
+WARNING:HDLParsers:817 - "D:/XProjects/vhdl_cpu/uart.vhd" Line 95. Choice * is not a locally static expression.
+WARNING:HDLParsers:817 - "D:/XProjects/vhdl_cpu/uart.vhd" Line 96. Choice * is not a locally static expression.
+WARNING:HDLParsers:817 - "D:/XProjects/vhdl_cpu/uart.vhd" Line 97. Choice * is not a locally static expression.
+WARNING:HDLParsers:817 - "D:/XProjects/vhdl_cpu/uart.vhd" Line 98. Choice * is not a locally static expression.
+WARNING:HDLParsers:817 - "D:/XProjects/vhdl_cpu/uart.vhd" Line 99. Choice * is not a locally static expression.
+WARNING:HDLParsers:817 - "D:/XProjects/vhdl_cpu/uart.vhd" Line 100. Choice * is not a locally static expression.
+WARNING:HDLParsers:817 - "D:/XProjects/vhdl_cpu/uart.vhd" Line 101. Choice * is not a locally static expression.
+WARNING:HDLParsers:817 - "D:/XProjects/vhdl_cpu/uart.vhd" Line 102. Choice * is not a locally static expression.
+Entity <uart> (Architecture <Behavioral>) compiled.
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.31 secs
+ 
+--> 
+
+Total memory usage is 129148 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   21 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+

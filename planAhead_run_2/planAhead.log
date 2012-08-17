@@ -1,0 +1,104 @@
+#-----------------------------------------------------------
+# PlanAhead v14.1
+# Build 179419 by xbuild on Thu Apr 26 11:41:35 MDT 2012
+# Start of session at: Fri Aug 17 15:46:43 2012
+# Process ID: 740
+# Log file: D:/XProjects/vhdl_cpu/planAhead_run_2/planAhead.log
+# Journal file: D:/XProjects/vhdl_cpu/planAhead_run_2/planAhead.jou
+#-----------------------------------------------------------
+INFO: [Device-36] Loading parts and site information from D:/Xilinx/14.1/ISE_DS/PlanAhead/data/parts/arch.xml
+Parsing RTL primitives file [D:/Xilinx/14.1/ISE_DS/PlanAhead/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+Finished parsing RTL primitives file [D:/Xilinx/14.1/ISE_DS/PlanAhead/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+start_gui
+source D:/XProjects/vhdl_cpu/pa.fromNcd.tcl
+# create_project -name vhdl_cpu -dir "D:/XProjects/vhdl_cpu/planAhead_run_2" -part xc3s500efg320-4
+Parsing template File [D:/Xilinx/14.1/ISE_DS/ISE\data\projnav\templates\verilog.xml].
+Finished parsing template File [D:/Xilinx/14.1/ISE_DS/ISE\data\projnav\templates\verilog.xml].
+Parsing template File [D:/Xilinx/14.1/ISE_DS/ISE\data\projnav\templates\vhdl.xml].
+Finished parsing template File [D:/Xilinx/14.1/ISE_DS/ISE\data\projnav\templates\vhdl.xml].
+Parsing template File [D:/Xilinx/14.1/ISE_DS/ISE\data\projnav\templates\ucf.xml].
+Finished parsing template File [D:/Xilinx/14.1/ISE_DS/ISE\data\projnav\templates\ucf.xml].
+create_project: Time (s): elapsed = 00:00:08 . Memory (MB): peak = 322.168 ; gain = 17.797
+# set srcset [get_property srcset [current_run -impl]]
+# set_property design_mode GateLvl $srcset
+# set_property edif_top_file "D:/XProjects/vhdl_cpu/top.ngc" [ get_property srcset [ current_run ] ]
+# add_files -norecurse { {D:/XProjects/vhdl_cpu} }
+# set_property target_constrs_file "D:/XProjects/vhdl_cpu/top.ucf" [current_fileset -constrset]
+Adding file 'D:\XProjects\vhdl_cpu\top.ucf' to fileset 'constrs_1'
+# add_files [list {top.ucf}] -fileset [get_property constrset [current_run]]
+# add_files [list {cpu.ucf}] -fileset [get_property constrset [current_run]]
+# link_design
+Design is defaulting to srcset: sources_1
+Design is defaulting to constrset: constrs_1
+Design is defaulting to project part: xc3s500efg320-4
+Release 14.1 - ngc2edif P.15xf (nt)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Release 14.1 - ngc2edif P.15xf (nt)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+Reading design top.ngc ...
+WARNING:NetListWriters:298 - No output is written to top.xncf, ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+  finished :Prep
+Writing EDIF netlist file top.edif ...
+ngc2edif: Total memory usage is 45292 kilobytes
+
+Parsing EDIF File [.\planAhead_run_2\vhdl_cpu.data\cache\top_ngc_aae869be.edif]
+Finished Parsing EDIF File [.\planAhead_run_2\vhdl_cpu.data\cache\top_ngc_aae869be.edif]
+INFO: [Project-86] Reading macro library D:/Xilinx/14.1/ISE_DS/PlanAhead/data\./parts/xilinx/spartan3e/spartan3e/hd_int_macros.edn
+Parsing EDIF File [D:/Xilinx/14.1/ISE_DS/PlanAhead/data\./parts/xilinx/spartan3e/spartan3e/hd_int_macros.edn]
+Finished Parsing EDIF File [D:/Xilinx/14.1/ISE_DS/PlanAhead/data\./parts/xilinx/spartan3e/spartan3e/hd_int_macros.edn]
+WARNING: [Netlist-43] Netlist 'top' is not ideal for floorplanning, since the cellview 'top' defined in file 'top.ngc' contains large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
+Loading clock regions from D:/Xilinx/14.1/ISE_DS/PlanAhead/data\parts/xilinx/spartan3e/spartan3e/xc3s500e/ClockRegion.xml
+Loading clock buffers from D:/Xilinx/14.1/ISE_DS/PlanAhead/data\parts/xilinx/spartan3e/spartan3e/xc3s500e/ClockBuffers.xml
+Loading package from D:/Xilinx/14.1/ISE_DS/PlanAhead/data\parts/xilinx/spartan3e/spartan3e/xc3s500e/fg320/Package.xml
+Loading io standards from D:/Xilinx/14.1/ISE_DS/PlanAhead/data\./parts/xilinx/spartan3e/IOStandards.xml
+INFO: [Device-19] Loading pkg sso from D:/Xilinx/14.1/ISE_DS/PlanAhead/data\parts/xilinx/spartan3e/spartan3e/xc3s500e/fg320/SSORules.xml
+Loading list of drcs for the architecture : D:/Xilinx/14.1/ISE_DS/PlanAhead/data\./parts/xilinx/spartan3e/spartan3e/drc.xml
+INFO: [Timing-77] Reading timing library D:/Xilinx/14.1/ISE_DS/PlanAhead/data\parts/xilinx/spartan3e/spartan3e/spartan3e-4.lib.
+INFO: [Timing-34] Done reading timing library D:/Xilinx/14.1/ISE_DS/PlanAhead/data\parts/xilinx/spartan3e/spartan3e/spartan3e-4.lib.
+Parsing UCF File [D:\XProjects\vhdl_cpu\top.ucf]
+Finished Parsing UCF File [D:\XProjects\vhdl_cpu\top.ucf]
+Parsing UCF File [D:\XProjects\vhdl_cpu\cpu.ucf]
+Finished Parsing UCF File [D:\XProjects\vhdl_cpu\cpu.ucf]
+INFO: [Project-111] Unisim Transformation Summary:
+  A total of 43 instances were transformed.
+  RAM16X1D => RAM16X1D (HD_WSGEN, HD_RAM16_F, HD_RAM16_G): 32 instances
+  RAM16X1S => RAM16X1S (HD_RAM16_G, HD_WSGEN): 11 instances
+
+INFO: [Project-176] Phase 0 Netlist Checksum: faa6b68d 
+link_design: Time (s): elapsed = 00:00:50 . Memory (MB): peak = 341.230 ; gain = 19.063
+# read_xdl -file "D:/XProjects/vhdl_cpu/top.ncd"
+Release 14.1 - xdl P.15xf (nt)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+WARNING:XDL:213 - The resulting xdl output will not have LUT equation strings or RAM INIT strings.
+Loading device for application Rf_Device from file '3s500e.nph' in environment D:\Xilinx\14.1\ISE_DS\ISE\.
+   "top" is an NCD, version 3.2, device xc3s500e, package fg320, speed -4
+Successfully converted design 'D:\XProjects\vhdl_cpu\top.ncd' to 'D:\XProjects\vhdl_cpu\top.xdl'.
+INFO: [Designutils-669] Parsing Placement File : D:\XProjects\vhdl_cpu\top.ncd
+INFO: [Designutils-658] Finished Parsing Placement File : D:\XProjects\vhdl_cpu\top.ncd
+INFO: [Designutils-671] Placed 1547 instances
+read_xdl: Time (s): elapsed = 00:00:22 . Memory (MB): peak = 341.230 ; gain = 0.000
+# if {[catch {read_twx -name results_1 -file "D:/XProjects/vhdl_cpu/top.twx"} eInfo]} {
+#    puts "WARNING: there was a problem importing \"D:/XProjects/vhdl_cpu/top.twx\": $eInfo"
+# }
+create_slack_histogram -delay_type max -num_bins 10 -significant_digits 3 -results "timing_1"
+INFO: [Timing-91] UpdateTimingParams: Estimated, Speed grade: -4, Delay Type: max, Constraints type: UCF.
+INFO: [#UNDEF]  Finished parsing spd file spartan3e/3s500e .
+INFO: [Timing-45] Going to infer timing constraints.
+INFO: [Timing-33] Done inferring timing constraints.
+INFO: [Timing-36] Done setting wire delays.
+INFO: [Timing-85] Total timing graph edges = 16628.
+INFO: [Timing-86] Total timing graph wire edges = 5405.
+INFO: [Timing-87] Total zero delay edges = 952.
+INFO: [Timing-84] Total non-zero delay edges = 4449.
+INFO: [Dlyest-12] Total pin-pairs supplied = 5401 . 
+INFO: [Dlyest-11] Total data-paths obtained = 1348 . 
+INFO: [Dlyest-13] P2P = 4869, P2B = 0, P2NB = 163, B2B = 0, B2NB = 0, NB2NB = 0 . 
+INFO: [Timing-78] ReportTimingParams: -max_paths 2147483647 -nworst 1 -transition rf -delay_type max -sort_by slack.
+exit
+INFO: [Common-206] Exiting PlanAhead...
+INFO: [Common-83] Releasing license: PlanAhead

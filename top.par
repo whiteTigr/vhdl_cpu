@@ -1,32 +1,45 @@
 Release 14.1 par P.15xf (nt)
 Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
 
-WT::  Wed Aug 15 11:23:21 2012
+WT::  Fri Aug 17 15:40:32 2012
 
 par -w -intstyle ise -ol high -t 1 top_map.ncd top.ncd top.pcf 
 
 
 Constraints file: top.pcf.
-Loading device for application Rf_Device from file '3s400.nph' in environment D:\Xilinx\14.1\ISE_DS\ISE\.
-   "top" is an NCD, version 3.2, device xc3s400, package tq144, speed -4
+Loading device for application Rf_Device from file '3s500e.nph' in environment D:\Xilinx\14.1\ISE_DS\ISE\.
+   "top" is an NCD, version 3.2, device xc3s500e, package fg320, speed -4
 
-Initializing temperature to 85.000 Celsius. (default - Range: 0.000 to 85.000 Celsius)
-Initializing voltage to 1.140 Volts. (default - Range: 1.140 to 1.260 Volts)
-
-
-Device speed data version:  "PRODUCTION 1.39 2012-04-23".
+Initializing temperature to 85.000 Celsius. (default - Range: -40.000 to 100.000 Celsius)
+Initializing voltage to 1.140 Volts. (default - Range: 1.140 to 1.320 Volts)
 
 
-Device Utilization Summary:
+Device speed data version:  "PRODUCTION 1.27 2012-04-23".
 
-   Number of BUFGMUXs                        1 out of 8      12%
-   Number of External IOBs                   3 out of 97      3%
-      Number of LOCed IOBs                   1 out of 3      33%
 
-   Number of MULT18X18s                      3 out of 16     18%
-   Number of RAMB16s                         2 out of 16     12%
-   Number of Slices                        416 out of 3584   11%
-      Number of SLICEMs                     37 out of 1792    2%
+Design Summary Report:
+
+ Number of External IOBs                           4 out of 232     1%
+
+   Number of External Input IOBs                  2
+
+      Number of External Input IBUFs              2
+        Number of LOCed External Input IBUFs      1 out of 2      50%
+
+
+   Number of External Output IOBs                 2
+
+      Number of External Output IOBs              2
+
+   Number of External Bidir IOBs                  0
+
+
+   Number of BUFGMUXs                        2 out of 24      8%
+   Number of DCMs                            1 out of 4      25%
+   Number of MULT18X18SIOs                   3 out of 20     15%
+   Number of RAMB16s                         2 out of 20     10%
+   Number of Slices                        540 out of 4656   11%
+      Number of SLICEMs                     38 out of 2328    1%
 
 
 
@@ -35,58 +48,60 @@ Placer effort level (-pl):    High
 Placer cost table entry (-t): 1
 Router effort level (-rl):    High 
 
-Starting initial Timing Analysis.  REAL time: 3 secs 
-Finished initial Timing Analysis.  REAL time: 3 secs 
+Starting initial Timing Analysis.  REAL time: 4 secs 
+Finished initial Timing Analysis.  REAL time: 4 secs 
 
 
 Starting Placer
-Total REAL time at the beginning of Placer: 3 secs 
-Total CPU  time at the beginning of Placer: 2 secs 
+Total REAL time at the beginning of Placer: 4 secs 
+Total CPU  time at the beginning of Placer: 3 secs 
 
 Phase 1.1  Initial Placement Analysis
-Phase 1.1  Initial Placement Analysis (Checksum:2f98a199) REAL time: 5 secs 
+Phase 1.1  Initial Placement Analysis (Checksum:5cdd5f11) REAL time: 7 secs 
 
 Phase 2.7  Design Feasibility Check
-INFO:Place:834 - Only a subset of IOs are locked. Out of 3 IOs, 1 are locked and 2 are not locked. If you would like to
-   print the names of these IOs, please set the environment variable XIL_PAR_DESIGN_CHECK_VERBOSE to 1. 
-Phase 2.7  Design Feasibility Check (Checksum:2f98a199) REAL time: 5 secs 
+Phase 2.7  Design Feasibility Check (Checksum:5cdd5f11) REAL time: 7 secs 
 
 Phase 3.31  Local Placement Optimization
-Phase 3.31  Local Placement Optimization (Checksum:2f98a199) REAL time: 5 secs 
+Phase 3.31  Local Placement Optimization (Checksum:5cdd5f11) REAL time: 7 secs 
 
 Phase 4.2  Initial Clock and IO Placement
-...
-Phase 4.2  Initial Clock and IO Placement (Checksum:654edfe4) REAL time: 5 secs 
+...........
+Phase 4.2  Initial Clock and IO Placement (Checksum:ba8b5d71) REAL time: 12 secs 
 
-Phase 5.36  Local Placement Optimization
-Phase 5.36  Local Placement Optimization (Checksum:654edfe4) REAL time: 5 secs 
+Phase 5.30  Global Clock Region Assignment
+Phase 5.30  Global Clock Region Assignment (Checksum:ba8b5d71) REAL time: 12 secs 
 
-Phase 6.3  Local Placement Optimization
-....
-Phase 6.3  Local Placement Optimization (Checksum:65a02e4c) REAL time: 5 secs 
+Phase 6.36  Local Placement Optimization
+Phase 6.36  Local Placement Optimization (Checksum:ba8b5d71) REAL time: 12 secs 
 
-Phase 7.5  Local Placement Optimization
-Phase 7.5  Local Placement Optimization (Checksum:65a02e4c) REAL time: 5 secs 
+Phase 7.3  Local Placement Optimization
+...........
+Phase 7.3  Local Placement Optimization (Checksum:bbbd3e81) REAL time: 12 secs 
 
-Phase 8.8  Global Placement
-................................................................................................................................................................................
-......
-..................................................................................................................................
-.....
-.....
-Phase 8.8  Global Placement (Checksum:e347f4a5) REAL time: 10 secs 
+Phase 8.5  Local Placement Optimization
+Phase 8.5  Local Placement Optimization (Checksum:bbbd3e81) REAL time: 12 secs 
 
-Phase 9.5  Local Placement Optimization
-Phase 9.5  Local Placement Optimization (Checksum:e347f4a5) REAL time: 10 secs 
+Phase 9.8  Global Placement
+...................................................
+.......................................................
+...............................................................
+....................................................
+.............................................................................
+................................................................
+Phase 9.8  Global Placement (Checksum:cf26bcfb) REAL time: 16 secs 
 
-Phase 10.18  Placement Optimization
-Phase 10.18  Placement Optimization (Checksum:221d07e9) REAL time: 14 secs 
+Phase 10.5  Local Placement Optimization
+Phase 10.5  Local Placement Optimization (Checksum:cf26bcfb) REAL time: 16 secs 
 
-Phase 11.5  Local Placement Optimization
-Phase 11.5  Local Placement Optimization (Checksum:221d07e9) REAL time: 14 secs 
+Phase 11.18  Placement Optimization
+Phase 11.18  Placement Optimization (Checksum:f24c5918) REAL time: 22 secs 
 
-Total REAL time to Placer completion: 14 secs 
-Total CPU  time to Placer completion: 12 secs 
+Phase 12.5  Local Placement Optimization
+Phase 12.5  Local Placement Optimization (Checksum:f24c5918) REAL time: 22 secs 
+
+Total REAL time to Placer completion: 22 secs 
+Total CPU  time to Placer completion: 19 secs 
 Writing design to file top.ncd
 
 
@@ -94,26 +109,36 @@ Writing design to file top.ncd
 Starting Router
 
 
-Phase  1  : 3165 unrouted;      REAL time: 15 secs 
+Phase  1  : 3902 unrouted;      REAL time: 31 secs 
 
-Phase  2  : 2967 unrouted;      REAL time: 15 secs 
+Phase  2  : 3645 unrouted;      REAL time: 32 secs 
 
-Phase  3  : 1508 unrouted;      REAL time: 16 secs 
+Phase  3  : 1158 unrouted;      REAL time: 33 secs 
 
-Phase  4  : 1508 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 16 secs 
+Phase  4  : 1414 unrouted; (Setup:2000, Hold:0, Component Switching Limit:0)     REAL time: 35 secs 
 
-Phase  5  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 18 secs 
+Phase  5  : 0 unrouted; (Setup:5788, Hold:0, Component Switching Limit:0)     REAL time: 39 secs 
 
 Updating file: top.ncd with current fully routed design.
 
-Phase  6  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 19 secs 
+Phase  6  : 0 unrouted; (Setup:5788, Hold:0, Component Switching Limit:0)     REAL time: 40 secs 
 
-Phase  7  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 20 secs 
+Phase  7  : 0 unrouted; (Setup:5788, Hold:0, Component Switching Limit:0)     REAL time: 2 mins 1 secs 
 
-Phase  8  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 20 secs 
+Phase  8  : 0 unrouted; (Setup:3671, Hold:0, Component Switching Limit:0)     REAL time: 2 mins 13 secs 
 
-Total REAL time to Router completion: 20 secs 
-Total CPU time to Router completion: 17 secs 
+Updating file: top.ncd with current fully routed design.
+
+Phase  9  : 0 unrouted; (Setup:208, Hold:0, Component Switching Limit:0)     REAL time: 2 mins 56 secs 
+
+Phase 10  : 0 unrouted; (Setup:146, Hold:0, Component Switching Limit:0)     REAL time: 2 mins 57 secs 
+
+Phase 11  : 0 unrouted; (Setup:146, Hold:0, Component Switching Limit:0)     REAL time: 2 mins 57 secs 
+
+Phase 12  : 0 unrouted; (Setup:105, Hold:0, Component Switching Limit:0)     REAL time: 2 mins 57 secs 
+
+Total REAL time to Router completion: 2 mins 57 secs 
+Total CPU time to Router completion: 2 mins 49 secs 
 
 Partition Implementation Status
 -------------------------------
@@ -131,7 +156,7 @@ Generating Clock Report
 +---------------------+--------------+------+------+------------+-------------+
 |        Clock Net    |   Resource   |Locked|Fanout|Net Skew(ns)|Max Delay(ns)|
 +---------------------+--------------+------+------+------------+-------------+
-|           clk_BUFGP |      BUFGMUX7| No   |  168 |  0.001     |  1.015      |
+|                 clk | BUFGMUX_X1Y10| No   |  224 |  0.076     |  0.202      |
 +---------------------+--------------+------+------+------------+-------------+
 
 * Net Skew is the difference between the minimum and maximum routing
@@ -142,7 +167,26 @@ the minimum and maximum path delays which includes logic delays.
 * The fanout is the number of component pins not the individual BEL loads,
 for example SLICE loads not FF loads.
 
-Timing Score: 0 (Setup: 0, Hold: 0, Component Switching Limit: 0)
+Timing Score: 105 (Setup: 105, Hold: 0, Component Switching Limit: 0)
+
+WARNING:Par:468 - Your design did not meet timing.  The following are some suggestions to assist you to meet timing in
+   your design.
+
+   Review the timing report using Timing Analyzer (In ISE select "Post-Place &
+   Route Static Timing Report"). Go to the failing constraint(s) and evaluate the failing paths for each constraint.
+
+   Try the Design Goal and Strategies for Timing Performance(In ISE select Project -> Design Goals & Strategies) to
+   ensure the best options are set in the tools for timing closure.
+
+   Use the Xilinx "SmartXplorer" script to try special combinations of
+   options known to produce very good results.
+
+   Visit the Xilinx technical support web at http://support.xilinx.com and go to
+   either "Troubleshoot->Tech Tips->Timing & Constraints" or "
+   TechXclusives->Timing Closure" for tips and suggestions for meeting timing
+   in your design.
+
+Number of Timing Constraints that were not applied: 1
 
 Asterisk (*) preceding a constraint indicates it was not met.
    This may be due to a setup or hold violation.
@@ -151,30 +195,47 @@ Asterisk (*) preceding a constraint indicates it was not met.
   Constraint                                |    Check    | Worst Case |  Best Case | Timing |   Timing   
                                             |             |    Slack   | Achievable | Errors |    Score   
 ----------------------------------------------------------------------------------------------------------
-  TS_clk = PERIOD TIMEGRP "clk" 20 ns HIGH  | SETUP       |     0.333ns|    19.667ns|       0|           0
-  50%                                       | HOLD        |     0.836ns|            |       0|           0
+* TS_clk1 = PERIOD TIMEGRP "clk1" TS_clk HI | SETUP       |    -0.074ns|    12.574ns|       2|         105
+  GH 50%                                    | HOLD        |     0.766ns|            |       0|           0
+----------------------------------------------------------------------------------------------------------
+  TS_clk = PERIOD TIMEGRP "clk_in" 12.5 ns  | MINLOWPULSE |     6.500ns|     6.000ns|       0|           0
+  HIGH 50%                                  |             |            |            |        |            
 ----------------------------------------------------------------------------------------------------------
 
 
-All constraints were met.
+Derived Constraint Report
+Review Timing Report for more details on the following derived constraints.
+To create a Timing Report, run "trce -v 12 -fastpaths -o design_timing_report design.ncd design.pcf"
+or "Run Timing Analysis" from Timing Analyzer (timingan).
+Derived Constraints for TS_clk
++-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
+|                               |   Period    |       Actual Period       |      Timing Errors        |      Paths Analyzed       |
+|           Constraint          | Requirement |-------------+-------------|-------------+-------------|-------------+-------------|
+|                               |             |   Direct    | Derivative  |   Direct    | Derivative  |   Direct    | Derivative  |
++-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
+|TS_clk                         |     12.500ns|      6.000ns|     12.574ns|            0|            2|            0|        43467|
+| TS_clk1                       |     12.500ns|     12.574ns|          N/A|            2|            0|        43467|            0|
++-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
+
+1 constraint not met.
 
 
 Generating Pad Report.
 
 All signals are completely routed.
 
-Total REAL time to PAR completion: 21 secs 
-Total CPU time to PAR completion: 18 secs 
+Total REAL time to PAR completion: 2 mins 59 secs 
+Total CPU time to PAR completion: 2 mins 50 secs 
 
-Peak Memory Usage:  169 MB
+Peak Memory Usage:  197 MB
 
 Placement: Completed - No errors found.
 Routing: Completed - No errors found.
-Timing: Completed - No errors found.
+Timing: Completed - 2 errors found.
 
 Number of error messages: 0
-Number of warning messages: 0
-Number of info messages: 1
+Number of warning messages: 1
+Number of info messages: 0
 
 Writing design to file top.ncd
 

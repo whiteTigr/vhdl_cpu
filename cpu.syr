@@ -3,14 +3,14 @@ Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.81 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.78 secs
  
 --> Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.81 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.78 secs
  
 --> Reading design: cpu.prj
 
@@ -42,7 +42,7 @@ Ignore Synthesis Constraint File   : NO
 ---- Target Parameters
 Output File Name                   : "cpu"
 Output Format                      : NGC
-Target Device                      : xc3s400-4-tq144
+Target Device                      : xc3s400-4-fg320
 
 ---- Source Options
 Top Module Name                    : cpu
@@ -113,10 +113,10 @@ Entity <cpu> (Architecture <behavioral>) compiled.
 =========================================================================
 Analyzing hierarchy for entity <cpu> in library <work> (architecture <behavioral>) with generics.
 	AddrWidth = 32
-	CodeMemoryWidth = 9
-	CodeSize = 512
-	DataMemoryWidth = 7
-	DataSize = 128
+	CodeMemoryWidth = 11
+	CodeSize = 2048
+	DataMemoryWidth = 9
+	DataSize = 512
 	DataWidth = 32
 	StackSize = 16
 	StackWidth = 4
@@ -127,27 +127,17 @@ Analyzing hierarchy for entity <cpu> in library <work> (architecture <behavioral
 =========================================================================
 Analyzing generic Entity <cpu> in library <work> (Architecture <behavioral>).
 	AddrWidth = 32
-	CodeMemoryWidth = 9
-	CodeSize = 512
-	DataMemoryWidth = 7
-	DataSize = 128
+	CodeMemoryWidth = 11
+	CodeSize = 2048
+	DataMemoryWidth = 9
+	DataSize = 512
 	DataWidth = 32
 	StackSize = 16
 	StackWidth = 4
-WARNING:Xst:790 - "D:/XProjects/vhdl_cpu/cpu.vhd" line 196: Index value(s) does not match array range, simulation mismatch.
-INFO:Xst:1607 - Contents of array <CodeMemory> may be accessed with an index that does not cover the full array size.
-WARNING:Xst:790 - "D:/XProjects/vhdl_cpu/cpu.vhd" line 198: Index value(s) does not match array range, simulation mismatch.
-INFO:Xst:1607 - Contents of array <CodeMemory> may be accessed with an index that does not cover the full array size.
-WARNING:Xst:790 - "D:/XProjects/vhdl_cpu/cpu.vhd" line 199: Index value(s) does not match array range, simulation mismatch.
-INFO:Xst:1607 - Contents of array <CodeMemory> may be accessed with an index that does not cover the full array size.
-WARNING:Xst:1610 - "D:/XProjects/vhdl_cpu/cpu.vhd" line 289: Width mismatch. <DSDinA> has a width of 32 bits but assigned expression is 4-bit wide.
-WARNING:Xst:1610 - "D:/XProjects/vhdl_cpu/cpu.vhd" line 290: Width mismatch. <DSDinA> has a width of 32 bits but assigned expression is 4-bit wide.
-WARNING:Xst:1610 - "D:/XProjects/vhdl_cpu/cpu.vhd" line 312: Width mismatch. <DataAddrA> has a width of 7 bits but assigned expression is 32-bit wide.
-WARNING:Xst:1610 - "D:/XProjects/vhdl_cpu/cpu.vhd" line 347: Width mismatch. <DSDinA> has a width of 32 bits but assigned expression is 64-bit wide.
 INFO:Xst:2679 - Register <RSAddrB> in unit <cpu> has a constant value of 0000 during circuit operation. The register is replaced by logic.
-INFO:Xst:2679 - Register <CodeAddrA> in unit <cpu> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <CodeAddrA> in unit <cpu> has a constant value of 00000000000 during circuit operation. The register is replaced by logic.
 INFO:Xst:2679 - Register <CodeWeA> in unit <cpu> has a constant value of 0 during circuit operation. The register is replaced by logic.
-INFO:Xst:2679 - Register <DataAddrB> in unit <cpu> has a constant value of 0000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <DataAddrB> in unit <cpu> has a constant value of 000000000 during circuit operation. The register is replaced by logic.
 Entity <cpu> analyzed. Unit <cpu> generated.
 
 
@@ -163,49 +153,46 @@ WARNING:Xst:646 - Signal <RSDoutB> is assigned but never used. This unconnected 
 WARNING:Xst:646 - Signal <DataDoutB> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:646 - Signal <CodeDoutA> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:1780 - Signal <CodeDinA> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
-WARNING:Xst:646 - Signal <CodeAddrB<31:9>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
-WARNING:Xst:646 - Signal <CodeAddrA<31:9>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:646 - Signal <CmdIsLit> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
-    Found 512x9-bit dual-port RAM <Mram_CodeMemory> for signal <CodeMemory>.
-    Found 128x32-bit single-port RAM <Mram_DataMemory> for signal <DataMemory>.
+    Found 2048x9-bit dual-port RAM <Mram_CodeMemory> for signal <CodeMemory>.
+    Found 512x32-bit single-port RAM <Mram_DataMemory> for signal <DataMemory>.
     Found 16x32-bit single-port RAM <Mram_RetStack> for signal <RetStack>.
     Found 16x32-bit dual-port RAM <Mram_DataStack> for signal <DataStack>.
-WARNING:Xst:643 - "D:/XProjects/vhdl_cpu/cpu.vhd" line 347: The result of a 32x32-bit multiplication is partially used. Only the 32 least significant bits are used. If you are doing this on purpose, you may safely ignore this warning. Otherwise, make sure you are not losing information, leading to unexpected circuit behavior.
     Found 32-bit register for signal <addr>.
     Found 32-bit register for signal <dout>.
     Found 1-bit register for signal <iowr>.
     Found 9-bit register for signal <CodeDoutB>.
-    Found 7-bit register for signal <DataAddrA>.
+    Found 9-bit register for signal <DataAddrA>.
     Found 32-bit register for signal <DataDinA>.
     Found 32-bit register for signal <DataDoutA>.
     Found 1-bit register for signal <DataWeA>.
     Found 4-bit register for signal <DSAddrA>.
-    Found 4-bit addsub for signal <DSAddrA$share0000> created at line 255.
-    Found 4-bit subtractor for signal <DSAddrB$sub0000> created at line 221.
+    Found 4-bit addsub for signal <DSAddrA$share0000> created at line 260.
+    Found 4-bit subtractor for signal <DSAddrB$sub0000> created at line 226.
     Found 32-bit register for signal <DSDinA>.
     Found 32-bit addsub for signal <DSDinA$addsub0000>.
-    Found 32-bit comparator equal for signal <DSDinA$cmp_eq0019> created at line 330.
+    Found 32-bit comparator equal for signal <DSDinA$cmp_eq0019> created at line 335.
     Found 9-bit comparator greatequal for signal <DSDinA$cmp_ge0000>.
-    Found 32-bit comparator greater for signal <DSDinA$cmp_gt0000> created at line 336.
-    Found 32-bit comparator less for signal <DSDinA$cmp_lt0000> created at line 342.
-    Found 32x32-bit multiplier for signal <DSDinA$mult0000> created at line 347.
-    Found 32-bit xor2 for signal <DSDinA$xor0000> created at line 328.
+    Found 32-bit comparator greater for signal <DSDinA$cmp_gt0000> created at line 341.
+    Found 32-bit comparator less for signal <DSDinA$cmp_lt0000> created at line 347.
+    Found 32-bit xor2 for signal <DSDinA$xor0000> created at line 333.
     Found 32-bit register for signal <DSDoutA>.
     Found 32-bit register for signal <DSDoutB>.
     Found 1-bit register for signal <DSWeA>.
     Found 1-bit register for signal <fetching>.
     Found 32-bit register for signal <IP>.
+    Found 32x32-bit multiplier for signal <MulResult>.
     Found 1-bit register for signal <PrevCmdIsLIT>.
     Found 4-bit register for signal <RSAddrA>.
     Found 4-bit addsub for signal <RSAddrA$addsub0000>.
     Found 32-bit register for signal <RSDinA>.
-    Found 32-bit adder for signal <RSDinA$add0000> created at line 366.
+    Found 32-bit adder for signal <RSDinA$add0000> created at line 372.
     Found 32-bit register for signal <RSDoutA>.
     Found 1-bit register for signal <RSWeA>.
     Found 32-bit register for signal <TempReg>.
     Summary:
 	inferred   4 RAM(s).
-	inferred 382 D-type flip-flop(s).
+	inferred 384 D-type flip-flop(s).
 	inferred   5 Adder/Subtractor(s).
 	inferred   1 Multiplier(s).
 	inferred   4 Comparator(s).
@@ -218,10 +205,10 @@ HDL Synthesis Report
 
 Macro Statistics
 # RAMs                                                 : 4
- 128x32-bit single-port RAM                            : 1
  16x32-bit dual-port RAM                               : 1
  16x32-bit single-port RAM                             : 1
- 512x9-bit dual-port RAM                               : 1
+ 2048x9-bit dual-port RAM                              : 1
+ 512x32-bit single-port RAM                            : 1
 # Multipliers                                          : 1
  32x32-bit multiplier                                  : 1
 # Adders/Subtractors                                   : 5
@@ -233,8 +220,7 @@ Macro Statistics
  1-bit register                                        : 6
  32-bit register                                       : 11
  4-bit register                                        : 2
- 7-bit register                                        : 1
- 9-bit register                                        : 1
+ 9-bit register                                        : 2
 # Comparators                                          : 4
  32-bit comparator equal                               : 1
  32-bit comparator greater                             : 1
@@ -256,7 +242,7 @@ INFO:Xst:3226 - The RAM <Mram_DataMemory> will be implemented as a BLOCK RAM, ab
     | ram_type           | Block                               |          |
     -----------------------------------------------------------------------
     | Port A                                                              |
-    |     aspect ratio   | 128-word x 32-bit                   |          |
+    |     aspect ratio   | 512-word x 32-bit                   |          |
     |     mode           | read-first                          |          |
     |     clkA           | connected to signal <clk>           | rise     |
     |     weA            | connected to signal <DataWeA>       | high     |
@@ -301,7 +287,7 @@ INFO:Xst:3226 - The RAM <Mram_CodeMemory> will be implemented as a BLOCK RAM, ab
     | ram_type           | Block                               |          |
     -----------------------------------------------------------------------
     | Port A                                                              |
-    |     aspect ratio   | 512-word x 9-bit                    |          |
+    |     aspect ratio   | 2048-word x 9-bit                   |          |
     |     mode           | write-first                         |          |
     |     clkA           | connected to signal <clk>           | rise     |
     |     weA            | connected to signal <GND>           | high     |
@@ -311,7 +297,7 @@ INFO:Xst:3226 - The RAM <Mram_CodeMemory> will be implemented as a BLOCK RAM, ab
     | optimization       | speed                               |          |
     -----------------------------------------------------------------------
     | Port B                                                              |
-    |     aspect ratio   | 512-word x 9-bit                    |          |
+    |     aspect ratio   | 2048-word x 9-bit                   |          |
     |     mode           | write-first                         |          |
     |     clkB           | connected to signal <clk>           | rise     |
     |     addrB          | connected to signal <IP>            |          |
@@ -326,10 +312,10 @@ Advanced HDL Synthesis Report
 
 Macro Statistics
 # RAMs                                                 : 4
- 128x32-bit single-port block RAM                      : 1
  16x32-bit dual-port distributed RAM                   : 1
  16x32-bit single-port distributed RAM                 : 1
- 512x9-bit dual-port block RAM                         : 1
+ 2048x9-bit dual-port block RAM                        : 1
+ 512x32-bit single-port block RAM                      : 1
 # Multipliers                                          : 1
  32x32-bit multiplier                                  : 1
 # Adders/Subtractors                                   : 5
@@ -337,8 +323,8 @@ Macro Statistics
  32-bit addsub                                         : 1
  4-bit addsub                                          : 2
  4-bit subtractor                                      : 1
-# Registers                                            : 341
- Flip-Flops                                            : 341
+# Registers                                            : 343
+ Flip-Flops                                            : 343
 # Comparators                                          : 4
  32-bit comparator equal                               : 1
  32-bit comparator greater                             : 1
@@ -352,8 +338,6 @@ Macro Statistics
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
-WARNING:Xst:2677 - Node <RSDoutA_9> of sequential type is unconnected in block <cpu>.
-WARNING:Xst:2677 - Node <RSDoutA_10> of sequential type is unconnected in block <cpu>.
 WARNING:Xst:2677 - Node <RSDoutA_11> of sequential type is unconnected in block <cpu>.
 WARNING:Xst:2677 - Node <RSDoutA_12> of sequential type is unconnected in block <cpu>.
 WARNING:Xst:2677 - Node <RSDoutA_13> of sequential type is unconnected in block <cpu>.
@@ -375,8 +359,6 @@ WARNING:Xst:2677 - Node <RSDoutA_28> of sequential type is unconnected in block 
 WARNING:Xst:2677 - Node <RSDoutA_29> of sequential type is unconnected in block <cpu>.
 WARNING:Xst:2677 - Node <RSDoutA_30> of sequential type is unconnected in block <cpu>.
 WARNING:Xst:2677 - Node <RSDoutA_31> of sequential type is unconnected in block <cpu>.
-WARNING:Xst:2677 - Node <IP_9> of sequential type is unconnected in block <cpu>.
-WARNING:Xst:2677 - Node <IP_10> of sequential type is unconnected in block <cpu>.
 WARNING:Xst:2677 - Node <IP_11> of sequential type is unconnected in block <cpu>.
 WARNING:Xst:2677 - Node <IP_12> of sequential type is unconnected in block <cpu>.
 WARNING:Xst:2677 - Node <IP_13> of sequential type is unconnected in block <cpu>.
@@ -398,8 +380,6 @@ WARNING:Xst:2677 - Node <IP_28> of sequential type is unconnected in block <cpu>
 WARNING:Xst:2677 - Node <IP_29> of sequential type is unconnected in block <cpu>.
 WARNING:Xst:2677 - Node <IP_30> of sequential type is unconnected in block <cpu>.
 WARNING:Xst:2677 - Node <IP_31> of sequential type is unconnected in block <cpu>.
-WARNING:Xst:2677 - Node <RSDinA_9> of sequential type is unconnected in block <cpu>.
-WARNING:Xst:2677 - Node <RSDinA_10> of sequential type is unconnected in block <cpu>.
 WARNING:Xst:2677 - Node <RSDinA_11> of sequential type is unconnected in block <cpu>.
 WARNING:Xst:2677 - Node <RSDinA_12> of sequential type is unconnected in block <cpu>.
 WARNING:Xst:2677 - Node <RSDinA_13> of sequential type is unconnected in block <cpu>.
@@ -421,9 +401,7 @@ WARNING:Xst:2677 - Node <RSDinA_28> of sequential type is unconnected in block <
 WARNING:Xst:2677 - Node <RSDinA_29> of sequential type is unconnected in block <cpu>.
 WARNING:Xst:2677 - Node <RSDinA_30> of sequential type is unconnected in block <cpu>.
 WARNING:Xst:2677 - Node <RSDinA_31> of sequential type is unconnected in block <cpu>.
-WARNING:Xst:2677 - Node <Mram_RetStack10> of sequential type is unconnected in block <cpu>.
 WARNING:Xst:2677 - Node <Mram_RetStack13> of sequential type is unconnected in block <cpu>.
-WARNING:Xst:2677 - Node <Mram_RetStack11> of sequential type is unconnected in block <cpu>.
 WARNING:Xst:2677 - Node <Mram_RetStack12> of sequential type is unconnected in block <cpu>.
 WARNING:Xst:2677 - Node <Mram_RetStack14> of sequential type is unconnected in block <cpu>.
 WARNING:Xst:2677 - Node <Mram_RetStack15> of sequential type is unconnected in block <cpu>.
@@ -449,7 +427,7 @@ Optimizing unit <cpu> ...
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block cpu, actual ratio is 12.
+Found area constraint ratio of 100 (+ 5) on block cpu, actual ratio is 13.
 
 Final Macro Processing ...
 
@@ -457,8 +435,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 272
- Flip-Flops                                            : 272
+# Registers                                            : 280
+ Flip-Flops                                            : 280
 
 =========================================================================
 
@@ -487,56 +465,55 @@ Design Statistics
 # IOs                              : 99
 
 Cell Usage :
-# BELS                             : 900
+# BELS                             : 1077
 #      GND                         : 3
 #      INV                         : 5
-#      LUT1                        : 7
-#      LUT2                        : 121
-#      LUT3                        : 147
+#      LUT1                        : 22
+#      LUT2                        : 151
+#      LUT2_D                      : 1
+#      LUT2_L                      : 1
+#      LUT3                        : 131
 #      LUT3_D                      : 1
-#      LUT3_L                      : 3
-#      LUT4                        : 287
+#      LUT4                        : 349
 #      LUT4_D                      : 2
-#      LUT4_L                      : 80
-#      MUXCY                       : 155
-#      MUXF5                       : 17
+#      LUT4_L                      : 67
+#      MUXCY                       : 207
+#      MUXF5                       : 14
 #      VCC                         : 1
-#      XORCY                       : 71
-# FlipFlops/Latches                : 272
-#      FD                          : 73
-#      FDE                         : 172
-#      FDRE                        : 26
+#      XORCY                       : 122
+# FlipFlops/Latches                : 280
+#      FD                          : 75
+#      FDE                         : 174
+#      FDRE                        : 30
 #      FDS                         : 1
-# RAMS                             : 43
+# RAMS                             : 45
 #      RAM16X1D                    : 32
-#      RAM16X1S                    : 9
+#      RAM16X1S                    : 11
 #      RAMB16                      : 2
 # Clock Buffers                    : 1
 #      BUFGP                       : 1
 # IO Buffers                       : 98
 #      IBUF                        : 33
 #      OBUF                        : 65
-# MULTs                            : 3
-#      MULT18X18                   : 3
+# MULTs                            : 4
+#      MULT18X18                   : 4
 =========================================================================
 
 Device utilization summary:
 ---------------------------
 
-Selected Device : 3s400tq144-4 
+Selected Device : 3s400fg320-4 
 
- Number of Slices:                      405  out of   3584    11%  
- Number of Slice Flip Flops:            272  out of   7168     3%  
- Number of 4 input LUTs:                726  out of   7168    10%  
-    Number used as logic:               653
-    Number used as RAMs:                 73
+ Number of Slices:                      445  out of   3584    12%  
+ Number of Slice Flip Flops:            280  out of   7168     3%  
+ Number of 4 input LUTs:                805  out of   7168    11%  
+    Number used as logic:               730
+    Number used as RAMs:                 75
  Number of IOs:                          99
- Number of bonded IOBs:                  99  out of     97   102% (*) 
+ Number of bonded IOBs:                  99  out of    221    44%  
  Number of BRAMs:                         2  out of     16    12%  
- Number of MULT18X18s:                    3  out of     16    18%  
+ Number of MULT18X18s:                    4  out of     16    25%  
  Number of GCLKs:                         1  out of      8    12%  
-
-WARNING:Xst:1336 -  (*) More than 100% of Device resources are used
 
 ---------------------------
 Partition Resource Summary:
@@ -559,7 +536,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clk                                | BUFGP                  | 315   |
+clk                                | BUFGP                  | 325   |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -570,8 +547,8 @@ Timing Summary:
 ---------------
 Speed Grade: -4
 
-   Minimum period: 14.100ns (Maximum Frequency: 70.922MHz)
-   Minimum input arrival time before clock: 9.885ns
+   Minimum period: 15.211ns (Maximum Frequency: 65.742MHz)
+   Minimum input arrival time before clock: 10.087ns
    Maximum output required time after clock: 7.165ns
    Maximum combinational path delay: No path found
 
@@ -581,57 +558,71 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 14.100ns (frequency: 70.922MHz)
-  Total number of paths / destination ports: 102666 / 888
+  Clock period: 15.211ns (frequency: 65.742MHz)
+  Total number of paths / destination ports: 1548465 / 918
 -------------------------------------------------------------------------
-Delay:               14.100ns (Levels of Logic = 8)
-  Source:            DSDoutA_6 (FF)
+Delay:               15.211ns (Levels of Logic = 22)
+  Source:            DSDoutA_8 (FF)
   Destination:       DSDinA_31 (FF)
   Source Clock:      clk rising
   Destination Clock: clk rising
 
-  Data Path: DSDoutA_6 to DSDinA_31
+  Data Path: DSDoutA_8 to DSDinA_31
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q              15   0.720   1.188  DSDoutA_6 (DSDoutA_6)
-     MULT18X18:B6->P29     1   4.709   0.996  Mmult_DSDinA_mult0000_submult_0 (Mmult_DSDinA_mult0000_submult_0_29)
-     LUT2:I1->O            1   0.551   0.000  Mmult_DSDinA_mult0000_Madd_lut<14> (Mmult_DSDinA_mult0000_Madd_lut<14>)
-     MUXCY:S->O            1   0.500   0.000  Mmult_DSDinA_mult0000_Madd_cy<14> (Mmult_DSDinA_mult0000_Madd_cy<14>)
-     XORCY:CI->O           1   0.904   0.996  Mmult_DSDinA_mult0000_Madd_xor<15> (Mmult_DSDinA_mult0000_Madd_30)
-     LUT2:I1->O            1   0.551   0.000  Mmult_DSDinA_mult0000_Madd1_lut<30> (Mmult_DSDinA_mult0000_Madd1_lut<30>)
-     MUXCY:S->O            0   0.500   0.000  Mmult_DSDinA_mult0000_Madd1_cy<30> (Mmult_DSDinA_mult0000_Madd1_cy<30>)
-     XORCY:CI->O           1   0.904   0.827  Mmult_DSDinA_mult0000_Madd1_xor<31> (DSDinA_mult0000<31>)
-     LUT4:I3->O            1   0.551   0.000  DSDinA_mux0001<31>130 (DSDinA_mux0001<31>)
+     FD:C->Q              15   0.720   1.188  DSDoutA_8 (DSDoutA_8)
+     MULT18X18:A8->P30     1   4.780   1.140  Mmult_MulResult_submult_1 (Mmult_MulResult_submult_1_30)
+     LUT2:I0->O            1   0.551   0.000  Mmult_MulResult_Madd_lut<32> (Mmult_MulResult_Madd_lut<32>)
+     MUXCY:S->O            1   0.500   0.000  Mmult_MulResult_Madd_cy<32> (Mmult_MulResult_Madd_cy<32>)
+     XORCY:CI->O           1   0.904   0.996  Mmult_MulResult_Madd_xor<33> (Mmult_MulResult_Madd_48)
+     LUT2:I1->O            1   0.551   0.000  Mmult_MulResult_Madd1_lut<48> (Mmult_MulResult_Madd1_lut<48>)
+     MUXCY:S->O            1   0.500   0.000  Mmult_MulResult_Madd1_cy<48> (Mmult_MulResult_Madd1_cy<48>)
+     MUXCY:CI->O           1   0.064   0.000  Mmult_MulResult_Madd1_cy<49> (Mmult_MulResult_Madd1_cy<49>)
+     MUXCY:CI->O           1   0.064   0.000  Mmult_MulResult_Madd1_cy<50> (Mmult_MulResult_Madd1_cy<50>)
+     MUXCY:CI->O           1   0.064   0.000  Mmult_MulResult_Madd1_cy<51> (Mmult_MulResult_Madd1_cy<51>)
+     MUXCY:CI->O           1   0.064   0.000  Mmult_MulResult_Madd1_cy<52> (Mmult_MulResult_Madd1_cy<52>)
+     MUXCY:CI->O           1   0.064   0.000  Mmult_MulResult_Madd1_cy<53> (Mmult_MulResult_Madd1_cy<53>)
+     MUXCY:CI->O           1   0.064   0.000  Mmult_MulResult_Madd1_cy<54> (Mmult_MulResult_Madd1_cy<54>)
+     MUXCY:CI->O           1   0.064   0.000  Mmult_MulResult_Madd1_cy<55> (Mmult_MulResult_Madd1_cy<55>)
+     MUXCY:CI->O           1   0.064   0.000  Mmult_MulResult_Madd1_cy<56> (Mmult_MulResult_Madd1_cy<56>)
+     MUXCY:CI->O           1   0.064   0.000  Mmult_MulResult_Madd1_cy<57> (Mmult_MulResult_Madd1_cy<57>)
+     MUXCY:CI->O           1   0.064   0.000  Mmult_MulResult_Madd1_cy<58> (Mmult_MulResult_Madd1_cy<58>)
+     MUXCY:CI->O           1   0.064   0.000  Mmult_MulResult_Madd1_cy<59> (Mmult_MulResult_Madd1_cy<59>)
+     MUXCY:CI->O           1   0.064   0.000  Mmult_MulResult_Madd1_cy<60> (Mmult_MulResult_Madd1_cy<60>)
+     MUXCY:CI->O           1   0.064   0.000  Mmult_MulResult_Madd1_cy<61> (Mmult_MulResult_Madd1_cy<61>)
+     MUXCY:CI->O           0   0.064   0.000  Mmult_MulResult_Madd1_cy<62> (Mmult_MulResult_Madd1_cy<62>)
+     XORCY:CI->O           1   0.904   0.827  Mmult_MulResult_Madd1_xor<63> (MulResult<63>)
+     LUT4:I3->O            1   0.551   0.000  DSDinA_mux0001<31>143 (DSDinA_mux0001<31>)
      FDE:D                     0.203          DSDinA_31
     ----------------------------------------
-    Total                     14.100ns (10.093ns logic, 4.007ns route)
-                                       (71.6% logic, 28.4% route)
+    Total                     15.211ns (11.060ns logic, 4.151ns route)
+                                       (72.7% logic, 27.3% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 231 / 231
+  Total number of paths / destination ports: 237 / 237
 -------------------------------------------------------------------------
-Offset:              9.885ns (Levels of Logic = 7)
-  Source:            din<9> (PAD)
-  Destination:       DSDinA_9 (FF)
+Offset:              10.087ns (Levels of Logic = 7)
+  Source:            din<8> (PAD)
+  Destination:       DSDinA_8 (FF)
   Destination Clock: clk rising
 
-  Data Path: din<9> to DSDinA_9
+  Data Path: din<8> to DSDinA_8
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             1   0.821   1.140  din_9_IBUF (din_9_IBUF)
-     LUT4:I0->O            1   0.551   1.140  DSDinA_mux0001<9>4 (DSDinA_mux0001<9>4)
-     LUT3:I0->O            1   0.551   1.140  DSDinA_mux0001<9>10 (DSDinA_mux0001<9>10)
-     LUT4:I0->O            1   0.551   0.869  DSDinA_mux0001<9>85 (DSDinA_mux0001<9>85)
-     LUT3_L:I2->LO         1   0.551   0.126  DSDinA_mux0001<9>111_SW0 (N195)
-     LUT4:I3->O            1   0.551   1.140  DSDinA_mux0001<9>111 (DSDinA_mux0001<9>111)
-     LUT2:I0->O            1   0.551   0.000  DSDinA_mux0001<9>120 (DSDinA_mux0001<9>)
-     FDE:D                     0.203          DSDinA_9
+     IBUF:I->O             1   0.821   0.827  din_8_IBUF (din_8_IBUF)
+     LUT4:I3->O            1   0.551   0.827  DSDinA_mux0001<8>10_SW0 (N188)
+     LUT4:I3->O            1   0.551   1.140  DSDinA_mux0001<8>10 (DSDinA_mux0001<8>10)
+     LUT4:I0->O            1   0.551   1.140  DSDinA_mux0001<8>49 (DSDinA_mux0001<8>49)
+     LUT4:I0->O            1   0.551   0.827  DSDinA_mux0001<8>101 (DSDinA_mux0001<8>101)
+     LUT4:I3->O            1   0.551   0.996  DSDinA_mux0001<8>111 (DSDinA_mux0001<8>111)
+     LUT4:I1->O            1   0.551   0.000  DSDinA_mux0001<8>136 (DSDinA_mux0001<8>)
+     FDE:D                     0.203          DSDinA_8
     ----------------------------------------
-    Total                      9.885ns (4.330ns logic, 5.555ns route)
-                                       (43.8% logic, 56.2% route)
+    Total                     10.087ns (4.330ns logic, 5.757ns route)
+                                       (42.9% logic, 57.1% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
@@ -655,14 +646,14 @@ Offset:              7.165ns (Levels of Logic = 1)
 =========================================================================
 
 
-Total REAL time to Xst completion: 23.00 secs
-Total CPU time to Xst completion: 23.17 secs
+Total REAL time to Xst completion: 26.00 secs
+Total CPU time to Xst completion: 26.45 secs
  
 --> 
 
-Total memory usage is 156912 kilobytes
+Total memory usage is 157936 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :  108 (   0 filtered)
-Number of infos    :   13 (   0 filtered)
+Number of warnings :   89 (   0 filtered)
+Number of infos    :   10 (   0 filtered)
 

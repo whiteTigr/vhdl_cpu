@@ -1,2 +1,4 @@
+vhdl work "uart.vhd"
 vhdl work "cpu.vhd"
+vhdl work "clk_dcm.vhf"
 vhdl work "top.vhd"

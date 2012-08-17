@@ -1,4 +1,8 @@
-AR cpu behavioral D:/XProjects/vhdl_cpu/cpu.vhd sub00/vhpl01 1345015341
-EN cpu NULL D:/XProjects/vhdl_cpu/cpu.vhd sub00/vhpl00 1345015340
-EN top NULL D:/XProjects/vhdl_cpu/top.vhd sub00/vhpl02 1345015342
-AR top behavioral D:/XProjects/vhdl_cpu/top.vhd sub00/vhpl03 1345015343
+AR cpu behavioral D:/XProjects/vhdl_cpu/cpu.vhd sub00/vhpl01 1345203565
+EN cpu NULL D:/XProjects/vhdl_cpu/cpu.vhd sub00/vhpl00 1345203564
+EN top NULL D:/XProjects/vhdl_cpu/top.vhd sub00/vhpl02 1345203566
+AR clk_dcm behavioral D:/XProjects/vhdl_cpu/clk_dcm.vhf sub00/vhpl05 1345203563
+AR top behavioral D:/XProjects/vhdl_cpu/top.vhd sub00/vhpl03 1345203567
+EN clk_dcm NULL D:/XProjects/vhdl_cpu/clk_dcm.vhf sub00/vhpl04 1345203562
+AR uart behavioral D:/XProjects/vhdl_cpu/uart.vhd sub00/vhpl07 1345203561
+EN uart NULL D:/XProjects/vhdl_cpu/uart.vhd sub00/vhpl06 1345203560

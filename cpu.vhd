@@ -36,11 +36,13 @@ entity cpu is
           DataWidth: integer := 32;
           StackSize: integer := 16;
           StackWidth: integer := 4;
-          CodeSize: integer := 512;
-          CodeMemoryWidth: integer := 9;
-          DataSize: integer := 128;
-          DataMemoryWidth: integer := 7);
+          CodeSize: integer := 2048;
+          CodeMemoryWidth: integer := 11;
+          DataSize: integer := 512;
+          DataMemoryWidth: integer := 9);
     Port ( clk : in  STD_LOGIC;
+           rx: in std_logic;
+           tx: out std_logic;
            addr : out  STD_LOGIC_VECTOR (AddrWidth-1 downto 0);
            dout : out  STD_LOGIC_VECTOR (DataWidth-1 downto 0);
            iowr : out  STD_LOGIC;
@@ -92,6 +94,7 @@ constant cmdEQUAL: integer := 86;
 constant cmdGREATER: integer := 87;
 constant cmdLESS: integer := 88;
 constant cmdMUL: integer := 89;
+constant cmdMULH: integer := 90;
 
 subtype DataSignal is std_logic_vector(DataWidth-1 downto 0);
 subtype AddrSignal is std_logic_vector(AddrWidth-1 downto 0);
@@ -140,7 +143,7 @@ signal CodeMemory: TCodeMemory := (
   21 => "111111111",
   others => (others => '0')
 );
-signal CodeAddrA, CodeAddrB: AddrSignal;
+signal CodeAddrA, CodeAddrB: CodeAddrSignal;
 signal CodeDoutA, CodeDoutB: CodeSignal;
 signal CodeDinA: CodeSignal;
 signal CodeWeA: std_logic;
@@ -160,6 +163,15 @@ signal PrevCmdIsLIT: std_logic;
 
 signal CmdIsLit: std_logic;
 signal TempReg: DataSignal;
+
+signal int_reset: std_logic;
+
+signal MulResult: std_logic_vector(DataWidth * 2 - 1 downto 0);
+
+signal receivedByte: std_logic_vector(7 downto 0);
+signal transmitByte: std_logic_vector(7 downto 0);
+signal received: std_logic;
+signal transmit: std_logic;
 
 begin
 
@@ -204,19 +216,56 @@ process(clk)
 begin
   if rising_edge(clk) then
     if DataWeA = '1' then
-      DataMemory(conv_integer(DataAddrA)) <= DataDinA;      
+      DataMemory(conv_integer(DataAddrA)) <= DataDinA;     
     end if;
-    DataDoutA <= DataMemory(conv_integer(DataAddrA));
+    DataDoutA <= DataMemory(conv_integer(DataAddrA));   
     DataDoutB <= DataMemory(conv_integer(DataAddrB));
   end if;
 end process;
 
 -- end of stack and memory declaration
 
-CodeAddrB <= ip;
+-- loader
+uart_unit: entity uart
+  Generic map(
+    ClkFreq => 50_000_000,
+    Baudrate => 115200)
+  port map(
+    clk => clk,
+    rxd => rx,
+    txd => tx,
+    dout => receivedByte,
+    received => received,
+    din => transmitByte,
+    transmit => transmit);
+    
+process(clk)
+begin
+  if rising_edge(clk) then
+    if received = '1' then
+      case conv_integer(receivedByte) is
+        when 0 to 15 => CodeDinA(3 downto 0) <= receivedByte(3 downto 0);
+        when 16 to 31 => CodeDinA(7 downto 4) <= receivedByte(3 downto 0);
+        when 32 to 47 => CodeDinA(8) <= receivedByte(0);
+        when 240 => CodeAddrA <= (others => '0');
+        when 241 => CodeWeA <= '1';
+        when 242 => CodeWeA <= '0'; CodeAddrA <= CodeAddrA + 1;
+        when 243 => int_reset <= '1';
+        when 244 => int_reset <= '0';
+        when others => null;
+      end case;
+    end if;
+  end if;
+end process;
+
+-- end of loader
+
+CodeAddrB <= ip(CodeAddrB'range);
 cmd <= CodeDoutB;
 
 CmdIsLit <= '1' when Cmd(8) = '1' else '0';
+
+MulResult <= DSDoutA * DSDoutB;
 
 DSAddrB <= DSAddrA - 1;
 
@@ -224,15 +273,12 @@ process(clk)
 begin
   if rising_edge(clk) then
     -- Синхронный ресет, чтобы не ловить "иголки".
-    if reset = '1' then
+    if reset = '1' or int_reset = '1' then
       DSAddrA <= (others => '0');      
       
       RSAddrA <= (others => '0');
       RSAddrB <= (others => '0');
       RSWeA <= '0';
-      
-      CodeAddrA <= (others => '0');
-      CodeWeA <= '0';
       
       DataAddrA <= (others => '0');
       DataAddrB <= (others => '0');
@@ -286,8 +332,8 @@ begin
                       
           -- group 1; pop 0; push 1;
           when cmdTEMP => DSDinA <= TempReg;
-          when cmdDEPTH => DSDinA <= DSAddrA;
-          when cmdRDEPTH => DSDinA <= RSAddrA;
+          when cmdDEPTH => DSDinA <= ext(DSAddrA, DataWidth);
+          when cmdRDEPTH => DSDinA <= ext(RSAddrA, DataWidth);
           when cmdDUP => DSDinA <= DSDoutA;
           when cmdOVER => DSDinA <= DSDoutB;
 
@@ -309,7 +355,7 @@ begin
 
           -- group 4; pop 2; push 0;          
           when cmdSTORE =>            
-            DataAddrA <= DSDoutA;
+            DataAddrA <= DSDoutA(DataAddrA'range);
             DataDinA <= DSDoutB;
             DataWeA <= '1';
           when cmdOUTPORT =>
@@ -344,7 +390,8 @@ begin
             else
               DSDinA <= (others => '0');
             end if;
-          when cmdMUL => DSDinA <= DSDoutB * DSDoutA;
+          when cmdMUL => DSDinA <= MulResult(DataWidth - 1 downto 0);
+          --when cmdMULH => DSDinA <= MulResult(DataWidth * 2 - 1 downto DataWidth);
             
           when others => null;
         end case;

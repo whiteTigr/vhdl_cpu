@@ -16,7 +16,7 @@ Parsing template File [D:/Xilinx/14.1/ISE_DS/ISE\data\projnav\templates\vhdl.xml
 Finished parsing template File [D:/Xilinx/14.1/ISE_DS/ISE\data\projnav\templates\vhdl.xml].
 Parsing template File [D:/Xilinx/14.1/ISE_DS/ISE\data\projnav\templates\ucf.xml].
 Finished parsing template File [D:/Xilinx/14.1/ISE_DS/ISE\data\projnav\templates\ucf.xml].
-create_project: Time (s): elapsed = 00:00:07 . Memory (MB): peak = 312.891 ; gain = 12.695
+create_project: Time (s): elapsed = 00:00:08 . Memory (MB): peak = 216.895 ; gain = 4.492
 # set srcset [get_property srcset [current_run -impl]]
 # set_property design_mode GateLvl $srcset
 # set_property edif_top_file "D:/XProjects/vhdl_cpu/top.ngc" [ get_property srcset [ current_run ] ]
@@ -65,7 +65,7 @@ INFO: [Project-111] Unisim Transformation Summary:
   RAM16X1S => RAM16X1S (HD_RAM16_G, HD_WSGEN): 9 instances
 
 INFO: [Project-176] Phase 0 Netlist Checksum: 9a09ad52 
-link_design: Time (s): elapsed = 00:00:29 . Memory (MB): peak = 349.367 ; gain = 34.715
+link_design: Time (s): elapsed = 00:00:39 . Memory (MB): peak = 243.238 ; gain = 26.344
 # read_xdl -file "D:/XProjects/vhdl_cpu/top.ncd"
 Release 14.1 - xdl P.15xf (nt)
 Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
@@ -77,45 +77,7 @@ Successfully converted design 'D:\XProjects\vhdl_cpu\top.ncd' to 'D:\XProjects\v
 INFO: [Designutils-669] Parsing Placement File : D:\XProjects\vhdl_cpu\top.ncd
 INFO: [Designutils-658] Finished Parsing Placement File : D:\XProjects\vhdl_cpu\top.ncd
 INFO: [Designutils-671] Placed 1216 instances
-read_xdl: Time (s): elapsed = 00:00:17 . Memory (MB): peak = 349.367 ; gain = 0.000
+read_xdl: Time (s): elapsed = 00:00:40 . Memory (MB): peak = 243.238 ; gain = 0.000
 # if {[catch {read_twx -name results_1 -file "D:/XProjects/vhdl_cpu/top.twx"} eInfo]} {
 #    puts "WARNING: there was a problem importing \"D:/XProjects/vhdl_cpu/top.twx\": $eInfo"
 # }
-get_clocks -match_style ucf *
-invalid command name "get_clocks"
-get_clocks -match_style ucf *clk
-invalid command name "get_clocks"
-get_clocks -match_style ucf *clk*
-invalid command name "get_clocks"
-get_path_groups *
-invalid command name "get_path_groups"
-create_slack_histogram -delay_type max -num_bins 10 -significant_digits 3 -results "timing_1"
-INFO: [Timing-91] UpdateTimingParams: Estimated, Speed grade: -4, Delay Type: max, Constraints type: UCF.
-INFO: [#UNDEF]  Finished parsing spd file spartan3/3s400 .
-INFO: [Timing-45] Going to infer timing constraints.
-INFO: [Timing-33] Done inferring timing constraints.
-INFO: [Timing-36] Done setting wire delays.
-INFO: [Timing-85] Total timing graph edges = 11534.
-INFO: [Timing-86] Total timing graph wire edges = 4429.
-INFO: [Timing-87] Total zero delay edges = 750.
-INFO: [Timing-84] Total non-zero delay edges = 3676.
-INFO: [Dlyest-12] Total pin-pairs supplied = 4426 . 
-INFO: [Dlyest-11] Total data-paths obtained = 1043 . 
-INFO: [Dlyest-13] P2P = 4089, P2B = 0, P2NB = 50, B2B = 0, B2NB = 0, NB2NB = 0 . 
-INFO: [Timing-78] ReportTimingParams: -max_paths 2147483647 -nworst 1 -transition rf -delay_type max -sort_by slack.
-get_pins -hierarchical -match_style ucf *
-report_timing -to {unit_cpu/DSDinA_30/D} -max_paths 10 -sort_by group -input_pins -nets -name {timing_2}
-INFO: [Timing-91] UpdateTimingParams: Estimated, Speed grade: -4, Delay Type: max, Constraints type: UCF.
-INFO: [Timing-78] ReportTimingParams: -to_pins  -max_paths 10 -nworst 1 -transition rf -delay_type max -sort_by group.
-report_timing -to {unit_cpu/DSDinA_30/D unit_cpu/DSDinA_31/D unit_cpu/DSDinA_29/D unit_cpu/DSDinA_28/D unit_cpu/DSDinA_27/D unit_cpu/DSDinA_22/D unit_cpu/DSDinA_20/D unit_cpu/DSDinA_21/D unit_cpu/DSDinA_23/D unit_cpu/DSDinA_24/D unit_cpu/DSDinA_26/D unit_cpu/DSDinA_25/D unit_cpu/DSDinA_18/D unit_cpu/DSDinA_19/D unit_cpu/DSDinA_8/D unit_cpu/DSDinA_9/D unit_cpu/DSDinA_10/D unit_cpu/DSDinA_11/D unit_cpu/DSDinA_12/D unit_cpu/DSDinA_13/D unit_cpu/DSDinA_14/D unit_cpu/DSDinA_15/D unit_cpu/DSDinA_16/D unit_cpu/DSDinA_17/D unit_cpu/DSDinA_1/D unit_cpu/DSDinA_2/D unit_cpu/DSDinA_4/D unit_cpu/DSDinA_5/D unit_cpu/DSDinA_6/D unit_cpu/DSDinA_7/D unit_cpu/DSDinA_3/D unit_cpu/DSDinA_0/D} -max_paths 10 -sort_by group -input_pins -nets -name {timing_3}
-INFO: [Timing-91] UpdateTimingParams: Estimated, Speed grade: -4, Delay Type: max, Constraints type: UCF.
-INFO: [Timing-78] ReportTimingParams: -to_pins  -max_paths 10 -nworst 1 -transition rf -delay_type max -sort_by group.
-report_timing -to {unit_cpu/IP_0/D unit_cpu/IP_1/D unit_cpu/IP_2/D unit_cpu/IP_3/D unit_cpu/IP_4/D unit_cpu/IP_5/D unit_cpu/IP_6/D unit_cpu/IP_7/D unit_cpu/IP_8/D} -max_paths 10 -sort_by group -input_pins -nets -name {timing_4}
-INFO: [Timing-91] UpdateTimingParams: Estimated, Speed grade: -4, Delay Type: max, Constraints type: UCF.
-INFO: [Timing-78] ReportTimingParams: -to_pins  -max_paths 10 -nworst 1 -transition rf -delay_type max -sort_by group.
-report_timing -to {unit_cpu/DSDinA_30/D unit_cpu/DSDinA_31/D unit_cpu/DSDinA_29/D unit_cpu/DSDinA_28/D} -max_paths 10 -sort_by group -input_pins -nets -name {timing_5}
-INFO: [Timing-91] UpdateTimingParams: Estimated, Speed grade: -4, Delay Type: max, Constraints type: UCF.
-INFO: [Timing-78] ReportTimingParams: -to_pins  -max_paths 10 -nworst 1 -transition rf -delay_type max -sort_by group.
-exit
-INFO: [Common-206] Exiting PlanAhead...
-INFO: [Common-83] Releasing license: PlanAhead

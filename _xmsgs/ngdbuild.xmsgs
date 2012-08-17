@@ -5,5 +5,12 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
+<msg type="info" file="ConstraintSystem" num="178" delta="old" ><arg fmt="%s" index="1">TNM</arg> &apos;<arg fmt="%s" index="2">clk_in</arg>&apos;, used in period specification &apos;<arg fmt="%s" index="3">TS_clk</arg>&apos;, was traced into <arg fmt="%s" index="4">DCM_SP</arg> instance <arg fmt="%s" index="5">unit_dcm/XLXI_1</arg>. The following new TNM groups and period specifications were generated at the <arg fmt="%s" index="6">DCM_SP</arg> output(s): 
+<arg fmt="%s" index="7">CLK0</arg>: <arg fmt="%s" index="8">&lt;TIMESPEC TS_clk1 = PERIOD &quot;clk1&quot; TS_clk HIGH 50%&gt;</arg>
+</msg>
+
+<msg type="info" file="NgdBuild" num="1222" delta="old" >Setting <arg fmt="%s" index="1">CLKIN_PERIOD</arg> attribute associated with <arg fmt="%s" index="2">DCM</arg> instance <arg fmt="%s" index="3">unit_dcm/XLXI_1</arg> to <arg fmt="%s" index="4">12.500000</arg> ns based on the period specification (<arg fmt="%s" index="5">&lt;TIMESPEC TS_clk = PERIOD &quot;clk_in&quot; 12.5 ns HIGH 50 %;&gt; [top.ucf(3)]</arg>).
+</msg>
+
 </messages>
 

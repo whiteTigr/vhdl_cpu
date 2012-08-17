@@ -30,7 +30,9 @@ use IEEE.STD_LOGIC_1164.ALL;
 --use UNISIM.VComponents.all;
 
 entity top is
-    Port ( clk : in  STD_LOGIC;
+    Port ( clk_in : in  STD_LOGIC;
+           rx: in std_logic;
+           tx: out std_logic;
            d : in  STD_LOGIC;
            q : out  STD_LOGIC;
            CpuReset: in std_logic);
@@ -46,16 +48,27 @@ signal BusDout: DataSignal;
 signal BusDin: DataSignal;
 signal BusIowr: std_logic;
 
+signal clk: std_logic;
+
 begin
+
+unit_dcm: entity clk_dcm
+  port map( 
+    clk_in => clk_in,
+    clk => clk,
+    clk2x => OPEN,
+    locked => OPEN);
 
 unit_cpu: entity cpu
   port map( 
     clk => clk,
+    rx => rx,
+    tx => tx,
     addr => BusAddr,
     dout => BusDout,
     iowr => BusIowr,
     din => BusDin,
-    reset => CpuReset);
+    reset => '0');
 
 process(clk)
 begin
